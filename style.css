@@ -1,0 +1,679 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f8f1e5;
+    color: #3f332c;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   WARNA
+========================= */
+
+:root {
+    --cream: #f8f1e5;
+    --cream-muda: #fffaf2;
+    --cokelat-gelap: #3b2418;
+    --cokelat: #6f4e37;
+    --cokelat-muda: #a67c5b;
+    --cokelat-lembut: #d9c2ad;
+    --teks: #3f332c;
+    --putih: #ffffff;
+    --garis: #e4d4c4;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background-color: var(--cokelat-gelap);
+    color: var(--putih);
+    padding: 25px 8%;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.profil {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+/* =========================
+   AVATAR WANITA
+========================= */
+
+.avatar {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    min-width: 90px;
+    border-radius: 50%;
+    background-color: #e8c6a8;
+    overflow: hidden;
+    border: 4px solid var(--cokelat-lembut);
+}
+
+
+/* Rambut */
+
+.rambut {
+    position: absolute;
+    width: 70px;
+    height: 65px;
+    background-color: #3b2418;
+    border-radius: 50% 50% 40% 40%;
+    top: 7px;
+    left: 7px;
+}
+
+
+/* Wajah */
+
+.wajah {
+    position: absolute;
+    width: 45px;
+    height: 52px;
+    background-color: #f1c9a5;
+    border-radius: 45% 45% 48% 48%;
+    top: 22px;
+    left: 19px;
+}
+
+
+/* Mata */
+
+.mata {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #3b2418;
+    border-radius: 50%;
+    top: 22px;
+}
+
+.mata.kiri {
+    left: 10px;
+}
+
+.mata.kanan {
+    right: 10px;
+}
+
+
+/* Hidung */
+
+.hidung {
+    position: absolute;
+    width: 4px;
+    height: 8px;
+    border-right: 1px solid #9b674d;
+    top: 27px;
+    left: 21px;
+}
+
+
+/* Mulut */
+
+.mulut {
+    position: absolute;
+    width: 12px;
+    height: 5px;
+    border-bottom: 2px solid #8c4e4e;
+    border-radius: 50%;
+    top: 37px;
+    left: 17px;
+}
+
+
+/* Baju */
+
+.baju {
+    position: absolute;
+    width: 72px;
+    height: 35px;
+    background-color: #6f4e37;
+    border-radius: 50% 50% 0 0;
+    bottom: -5px;
+    left: 5px;
+}
+
+
+/* Rambut bagian depan */
+
+.rambut::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #3b2418;
+    border-radius: 0 50% 50% 50%;
+    top: 10px;
+    left: 0;
+}
+
+
+/* =========================
+   IDENTITAS
+========================= */
+
+.identitas h1 {
+    font-size: 30px;
+    margin-bottom: 3px;
+}
+
+.identitas p {
+    color: #eadfd4;
+}
+
+
+/* =========================
+   NAVIGASI
+========================= */
+
+nav {
+    margin-top: 25px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    display: block;
+    color: var(--putih);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: var(--cokelat);
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 8%;
+}
+
+section {
+    margin-bottom: 80px;
+}
+
+.judul-section {
+    margin-bottom: 30px;
+}
+
+.label {
+    color: var(--cokelat-muda);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+h2 {
+    color: var(--cokelat-gelap);
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+h3 {
+    color: var(--cokelat-gelap);
+}
+
+
+/* =========================
+   TENTANG SAYA
+========================= */
+
+.tentang-card {
+    background-color: var(--cream-muda);
+    padding: 35px;
+    border-radius: 18px;
+    border: 1px solid var(--garis);
+    box-shadow: 0 8px 25px rgba(59, 36, 24, 0.08);
+}
+
+.tentang-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.tentang-card p {
+    margin-bottom: 15px;
+}
+
+.tentang-card aside {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #efe1d2;
+    border-left: 5px solid var(--cokelat);
+    border-radius: 10px;
+}
+
+.tentang-card ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+
+/* =========================
+   PORTOFOLIO
+========================= */
+
+.kartu-portofolio {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.kartu-proyek {
+    background-color: var(--cream-muda);
+    border: 1px solid var(--garis);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(59, 36, 24, 0.08);
+    transition: 0.3s;
+}
+
+.kartu-proyek:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(59, 36, 24, 0.13);
+}
+
+
+/* =========================
+   BAGIAN VISUAL PROYEK
+========================= */
+
+.gambar-proyek {
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nusantara {
+    background-color: #d9c2ad;
+}
+
+.sibayak {
+    background-color: #cdb89f;
+}
+
+.anak {
+    background-color: #e8d6c2;
+}
+
+.olympic {
+    background-color: #d6c0aa;
+}
+
+.ikon-proyek {
+    font-size: 70px;
+}
+
+
+/* =========================
+   ISI PROYEK
+========================= */
+
+.isi-proyek {
+    padding: 25px;
+}
+
+.kategori {
+    display: inline-block;
+    background-color: #ead8c6;
+    color: var(--cokelat-gelap);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.isi-proyek h3 {
+    font-size: 24px;
+    margin: 12px 0;
+}
+
+.isi-proyek p {
+    margin-bottom: 12px;
+}
+
+
+/* =========================
+   TAG PROYEK
+========================= */
+
+.tag-proyek {
+    list-style: none;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+}
+
+.tag-proyek li {
+    background-color: var(--cokelat);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+}
+
+
+/* =========================
+   TABEL
+========================= */
+
+.tabel-container {
+    margin-top: 50px;
+    background-color: var(--cream-muda);
+    padding: 30px;
+    border-radius: 18px;
+    border: 1px solid var(--garis);
+    overflow-x: auto;
+}
+
+.tabel-container h3 {
+    margin-bottom: 20px;
+    font-size: 23px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+caption {
+    text-align: left;
+    margin-bottom: 15px;
+    color: #6b5a4c;
+}
+
+th,
+td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--garis);
+}
+
+thead th {
+    background-color: var(--cokelat);
+    color: white;
+}
+
+tbody th {
+    color: var(--cokelat-gelap);
+}
+
+tbody tr:hover {
+    background-color: #f2e6d8;
+}
+
+tfoot td {
+    background-color: #efe1d2;
+    font-size: 14px;
+}
+
+
+/* =========================
+   KEAHLIAN
+========================= */
+
+.keahlian-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.keahlian-card {
+    background-color: var(--cream-muda);
+    padding: 25px;
+    border-radius: 16px;
+    border: 1px solid var(--garis);
+    box-shadow: 0 8px 20px rgba(59, 36, 24, 0.07);
+    transition: 0.3s;
+}
+
+.keahlian-card:hover {
+    transform: translateY(-5px);
+}
+
+.keahlian-card h3 {
+    margin-bottom: 10px;
+    font-size: 21px;
+}
+
+.urutan-keahlian {
+    margin-top: 30px;
+    background-color: #efe1d2;
+    padding: 25px;
+    border-radius: 16px;
+}
+
+.urutan-keahlian h3 {
+    margin-bottom: 10px;
+}
+
+.urutan-keahlian ol {
+    padding-left: 25px;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+form {
+    background-color: var(--cream-muda);
+    padding: 35px;
+    border-radius: 18px;
+    border: 1px solid var(--garis);
+    box-shadow: 0 8px 25px rgba(59, 36, 24, 0.08);
+}
+
+fieldset {
+    border: 1px solid var(--garis);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+legend {
+    padding: 0 10px;
+    font-weight: bold;
+    color: var(--cokelat);
+}
+
+label,
+.label-form {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--cokelat-lembut);
+    border-radius: 8px;
+    background-color: white;
+    color: var(--teks);
+    font: inherit;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid #d9c2ad;
+    border-color: var(--cokelat);
+}
+
+label input[type="radio"],
+label input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+
+/* =========================
+   TOMBOL
+========================= */
+
+button {
+    border: none;
+    background-color: var(--cokelat-gelap);
+    color: white;
+    padding: 13px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover,
+button:focus {
+    background-color: var(--cokelat);
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background-color: var(--cokelat-gelap);
+    color: #eadfd4;
+    text-align: center;
+    padding: 30px 8%;
+}
+
+footer p {
+    margin-bottom: 5px;
+}
+
+footer a {
+    color: white;
+}
+
+
+/* =========================
+   RESPONSIF TABLET
+========================= */
+
+@media (max-width: 768px) {
+
+    .profil {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+
+    .kartu-portofolio {
+        grid-template-columns: 1fr;
+    }
+
+    .keahlian-grid {
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        padding: 40px 5%;
+    }
+
+    .identitas h1 {
+        font-size: 25px;
+    }
+
+    h2 {
+        font-size: 27px;
+    }
+}
+
+
+/* =========================
+   RESPONSIF HP
+========================= */
+
+@media (max-width: 480px) {
+
+    header {
+        padding: 20px 5%;
+    }
+
+    .tentang-card,
+    .tabel-container,
+    form {
+        padding: 20px;
+    }
+
+    .gambar-proyek {
+        height: 150px;
+    }
+
+    th,
+    td {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .profil h1 {
+        font-size: 22px;
+    }
+
+    nav a {
+        padding: 7px 12px;
+        font-size: 14px;
+    }
+
+    .ikon-proyek {
+        font-size: 55px;
+    }
+}
