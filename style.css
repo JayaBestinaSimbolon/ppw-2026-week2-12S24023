@@ -105,7 +105,7 @@ nav a:focus {
 
 
 /* =========================
-   PROFIL & FOTO WANITA PROFESIONAL
+   PROFIL & FOTO PROFIL
 ========================= */
 
 .profil {
@@ -123,6 +123,7 @@ nav a:focus {
     overflow: hidden;
     border: 4px solid var(--cokelat-lembut);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    background-color: var(--cokelat);
 }
 
 .foto-profil img {
@@ -223,7 +224,7 @@ h2 {
 
 
 /* =========================
-   ASIDE (Daftar Minat Bernomor)
+   ASIDE (Minat Bernomor)
 ========================= */
 
 .tentang-card aside {
@@ -452,6 +453,91 @@ tfoot td {
 
 
 /* =========================
+   SERTIFIKAT (NEW STYLES)
+========================= */
+
+.sertifikat-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+.sertifikat-card {
+    background-color: var(--cream-muda);
+    border: 1px solid var(--garis);
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(59, 36, 24, 0.08);
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.sertifikat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(59, 36, 24, 0.12);
+}
+
+.sertifikat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.sertifikat-badge {
+    background-color: var(--cokelat);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+}
+
+.sertifikat-icon {
+    font-size: 40px;
+}
+
+.sertifikat-body h3 {
+    color: var(--cokelat-gelap);
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.penerbit {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--cokelat-muda);
+    margin-bottom: 12px;
+}
+
+.deskripsi-sertifikat {
+    color: #5f5045;
+    font-size: 15px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.topik-sertifikat {
+    list-style: none;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.topik-sertifikat li {
+    background-color: #efe1d2;
+    color: var(--cokelat-gelap);
+    padding: 6px 14px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    border: 1px solid var(--garis);
+}
+
+
+/* =========================
    FORM
 ========================= */
 
@@ -648,6 +734,7 @@ footer a {
 
     .tentang-card,
     .tabel-container,
+    .sertifikat-card,
     form {
         padding: 20px;
     }
