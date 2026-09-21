@@ -1,0 +1,77 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#090d16" />
+    </linearGradient>
+    <linearGradient id="accent-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+    <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#fbbf24" />
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg-grad)"/>
+  <g stroke="#334155" stroke-width="0.75" opacity="0.3">
+    <line x1="0" y1="90" x2="800" y2="90" />
+    <line x1="0" y1="180" x2="800" y2="180" />
+    <line x1="0" y1="270" x2="800" y2="270" />
+    <line x1="0" y1="360" x2="800" y2="360" />
+    <line x1="160" y1="0" x2="160" y2="450" />
+    <line x1="320" y1="0" x2="320" y2="450" />
+    <line x1="480" y1="0" x2="480" y2="450" />
+    <line x1="640" y1="0" x2="640" y2="450" />
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="60" y="45" width="680" height="360" rx="14" fill="#1e293b" stroke="#475569" stroke-width="1.5" />
+    <rect x="60" y="45" width="680" height="38" rx="14" fill="#0f172a" />
+    <rect x="60" y="70" width="680" height="13" fill="#0f172a" />
+    <circle cx="85" cy="64" r="5.5" fill="#ef4444" />
+    <circle cx="103" cy="64" r="5.5" fill="#f59e0b" />
+    <circle cx="121" cy="64" r="5.5" fill="#10b981" />
+    <rect x="230" y="54" width="340" height="20" rx="6" fill="#334155" opacity="0.6" />
+    <text x="400" y="68" fill="#94a3b8" font-size="11" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" text-anchor="middle">delolympic.itdel.ac.id/portal</text>
+  </g>
+  <rect x="75" y="98" width="130" height="292" rx="8" fill="#0f172a" opacity="0.8" />
+  <rect x="90" y="115" width="90" height="14" rx="4" fill="url(#accent-grad)" />
+  <rect x="90" y="145" width="100" height="10" rx="3" fill="#334155" />
+  <rect x="90" y="165" width="85" height="10" rx="3" fill="#334155" />
+  <rect x="90" y="185" width="95" height="10" rx="3" fill="#334155" />
+  <rect x="90" y="205" width="80" height="10" rx="3" fill="#334155" />
+  <rect x="220" y="98" width="505" height="85" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" />
+  <text x="245" y="132" fill="#ffffff" font-size="18" font-weight="bold" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">Del Olympic Information Portal</text>
+  <text x="245" y="155" fill="#94a3b8" font-size="12" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">Sistem Informasi Registrasi &amp; Manajemen Kompetisi Mahasiswa IT Del</text>
+  <rect x="220" y="196" width="155" height="80" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1" />
+  <text x="235" y="222" fill="#94a3b8" font-size="11" font-family="sans-serif">Cabang Lomba</text>
+  <text x="235" y="255" fill="#38bdf8" font-size="24" font-weight="bold" font-family="sans-serif">14+</text>
+  <rect x="395" y="196" width="155" height="80" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1" />
+  <text x="410" y="222" fill="#94a3b8" font-size="11" font-family="sans-serif">Pendaftar Aktif</text>
+  <text x="410" y="255" fill="#10b981" font-size="24" font-weight="bold" font-family="sans-serif">320</text>
+  <rect x="570" y="196" width="155" height="80" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1" />
+  <text x="585" y="222" fill="#94a3b8" font-size="11" font-family="sans-serif">Jadwal Final</text>
+  <text x="585" y="255" fill="#f59e0b" font-size="24" font-weight="bold" font-family="sans-serif">Q4</text>
+  <rect x="220" y="290" width="505" height="100" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1" />
+  <line x1="220" y1="322" x2="725" y2="322" stroke="#334155" stroke-width="1" />
+  <text x="240" y="312" fill="#cbd5e1" font-size="11" font-weight="bold" font-family="sans-serif">DAFTAR KOMPETISI TERBARU</text>
+  <rect x="240" y="336" width="120" height="10" rx="3" fill="#38bdf8" opacity="0.7" />
+  <rect x="400" y="336" width="80" height="10" rx="3" fill="#64748b" />
+  <rect x="580" y="333" width="90" height="16" rx="8" fill="#1e3a8a" />
+  <text x="625" y="345" fill="#93c5fd" font-size="9" font-family="sans-serif" text-anchor="middle">Terbuka</text>
+  <rect x="240" y="362" width="140" height="10" rx="3" fill="#38bdf8" opacity="0.7" />
+  <rect x="400" y="362" width="90" height="10" rx="3" fill="#64748b" />
+  <rect x="580" y="359" width="90" height="16" rx="8" fill="#1e3a8a" />
+  <text x="625" y="371" fill="#93c5fd" font-size="9" font-family="sans-serif" text-anchor="middle">Terbuka</text>
+  <g filter="url(#shadow)">
+    <rect x="250" y="195" width="300" height="60" rx="30" fill="#0f172a" stroke="url(#gold-grad)" stroke-width="2" />
+    <circle cx="275" cy="225" r="10" fill="#f59e0b" />
+    <text x="275" y="229" fill="#ffffff" font-size="11" font-weight="bold" font-family="sans-serif" text-anchor="middle">&#9888;</text>
+    <text x="298" y="220" fill="#f8fafc" font-size="13" font-weight="bold" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">Tahap Pengembangan Sistem</text>
+    <text x="298" y="238" fill="#fbbf24" font-size="11" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">Progres Desain &amp; Analisis Kebutuhan</text>
+  </g>
+</svg>
