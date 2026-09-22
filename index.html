@@ -1,688 +1,989 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portofolio Profesional Jaya Bestina Simbolon - Mahasiswa Sistem Informasi Semester 5 Institut Teknologi Del (IT Del). Spesialisasi Business Analysis, Web Development, UI/UX, dan IT Support.">
-    <meta name="author" content="Jaya Bestina Simbolon">
-    <title>Jaya Bestina Simbolon | Portofolio & Layanan Solusi Digital Accessible</title>
-    <link rel="stylesheet" href="style.css">
+
+    <meta name="description"
+        content="Portofolio mahasiswa Sistem Informasi yang menampilkan profil, proyek, keterampilan, dan layanan.">
+
+    <title>Portofolio | Jaya Bestina Simbolon</title>
+
+    <!-- Bootstrap 5.3 -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="custom-style.css">
 </head>
+
 <body>
 
-    <!-- Skip Link Aksesibilitas (WCAG 2.2 Level AA - 2.4.1 Bypass Blocks) -->
-    <a href="#main-content" class="skip-link">Lewati ke Konten Utama</a>
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+    <header>
 
-    <!-- ==========================================================================
-         HEADER (Logo Brand, Navigasi Utama, Identitas Akademik & Foto Profil)
-         ========================================================================== -->
-    <header class="header-utama">
-        <div class="kontainer-lebar">
-            
-            <!-- Bilah Navigasi & Logo -->
-            <div class="bilah-navigasi">
-                <a href="#beranda" class="tautan-logo" aria-label="Beranda Portofolio Jaya Bestina Simbolon">
-                    <span class="logo-teks">Jaya Bestina Simbolon</span>
+        <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+
+            <div class="container">
+
+                <a class="navbar-brand fw-bold" href="#beranda">
+                    <i class="bi bi-person-badge-fill me-2"></i>
+                    PORTOFOLIO
                 </a>
 
-                <nav aria-label="Navigasi Utama">
-                    <ul class="menu-navigasi">
-                        <li><a href="#tentang">Tentang Saya</a></li>
-                        <li><a href="#portofolio">Portofolio</a></li>
-                        <li><a href="#keahlian">Keahlian</a></li>
-                        <li><a href="#sertifikat">Sertifikasi</a></li>
-                        <li><a href="#layanan" class="nav-cta">Hubungi Saya</a></li>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarMenu"
+                    aria-controls="navbarMenu"
+                    aria-expanded="false"
+                    aria-label="Buka menu navigasi">
+
+                    <span class="navbar-toggler-icon"></span>
+
+                </button>
+
+
+                <div class="collapse navbar-collapse" id="navbarMenu">
+
+                    <ul class="navbar-nav ms-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#beranda">
+                                Beranda
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#tentang">
+                                Tentang Saya
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#portofolio">
+                                Portofolio
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#keterampilan">
+                                Keterampilan
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#layanan">
+                                Layanan
+                            </a>
+                        </li>
+
                     </ul>
-                </nav>
-            </div>
 
-            <!-- Identitas Akademik & Profil Hero -->
-            <div class="kartu-profil-hero" id="beranda">
-                <div class="area-foto-profil">
-                    <figure class="foto-profil-wadah">
-                        <img src="images/foto-profil.jpg" 
-                             alt="Foto resmi Jaya Bestina Simbolon, Mahasiswa Sarjana Sistem Informasi Institut Teknologi Del" 
-                             class="gambar-profil-utama"
-                             width="140" 
-                             height="140">
-                    </figure>
-                    <div class="status-badge-wrapper">
-                        <span class="status-indikator" aria-hidden="true"></span>
-                        <span class="status-label">Mahasiswa Aktif Semester 5 &bull; Terbuka untuk Kolaborasi</span>
-                    </div>
                 </div>
 
-                <div class="info-profil-utama">
-                    <h1>Jaya Bestina Simbolon</h1>
-                    <p class="subjudul-akademik">
-                        Program Studi Sarjana Sistem Informasi <strong>Institut Teknologi Del</strong>
-                    </p>
-                    <div class="profil-aksi-grup">
-                        <a href="#portofolio" class="tombol tombol-primer">Lihat Portofolio Karya</a>
-                        <a href="#layanan" class="tombol tombol-sekunder">Ajukan Konsultasi / Pesan</a>
-                    </div>
-                </div>
             </div>
 
-        </div>
+        </nav>
+
     </header>
 
-    <!-- ==========================================================================
-         MAIN (5 Section Semantik Lengkap Berbobot Tinggi)
-         ========================================================================== -->
-    <main id="main-content">
-        <div class="kontainer-lebar">
 
-            <!-- ==================================================================
-                 SECTION 1: TENTANG SAYA (Profil Diri, Minat, dan Organisasi)
-                 ================================================================== -->
-            <section id="tentang" aria-labelledby="judul-tentang" class="section-blok">
-                <header class="header-section">
-                    <span class="nomor-section">01 PROFIL &amp; LATAR BELAKANG</span>
-                    <h2 id="judul-tentang">Tentang Saya</h2>
-                    <p class="deskripsi-section">
-                        Latar belakang akademik, minat, dan bidang yang sedang saya kembangkan dalam perjalanan akademik di Institut Teknologi Del.
-                    </p>
-                </header>
+    <main>
 
-                <article class="kartu-tentang">
-                    <div class="paragraf-biografi">
-                        <p class="teks-bio">
-                            Saya adalah mahasiswa Sistem Informasi di IT Del semester 5 yang memiliki ketertarikan dalam mengembangkan solusi digital berdasarkan kebutuhan pengguna. Saya memiliki minat pada Business Analysis, Web Development, dan UI/UX, dengan fokus pada bagaimana sebuah sistem dapat dirancang agar terstruktur, fungsional, dan mudah digunakan. Melalui berbagai proyek perkuliahan, saya terus mengembangkan kemampuan dalam menganalisis permasalahan, memahami kebutuhan pengguna, merancang solusi, serta mengimplementasikan dan menguji sistem. Saya terbuka untuk terus belajar, mengembangkan kemampuan teknis maupun analitis, dan mendapatkan pengalaman baru dalam bidang teknologi informasi.
-                        </p>
-                    </div>
+        <!-- =========================
+             BERANDA / HERO
+        ========================== -->
+        <section id="beranda" class="hero-section">
 
-                    <aside class="grid-informasi-pelengkap">
-                        <div class="kotak-pelengkap">
-                            <h3 class="judul-pelengkap">Bidang yang Saya Minati</h3>
-                            <p class="keterangan-pelengkap">Empat pilar utama yang menjadi fokus pendalaman karir dan studi saya:</p>
-                            <ol class="daftar-minat">
-                                <li>
-                                    <strong>Analisis Bisnis (Business Analysis)</strong>
-                                    <span>Menganalisis permasalahan dan kebutuhan pengguna serta pemangku kepentingan sebagai dasar perumusan solusi sistem informasi yang tepat sasaran.</span>
-                                </li>
-                                <li>
-                                    <strong>Software Developer</strong>
-                                    <span>Membangun aplikasi dan situs web berbasis struktur kode modern, bersih, semantik, responsif, dan mudah dipelihara.</span>
-                                </li>
-                                <li>
-                                    <strong>UI/UX Design</strong>
-                                    <span>Merancang antarmuka visual intuitif, kerangka kawat (wireframe), dan prototipe interaktif agar sistem mudah dan nyaman digunakan.</span>
-                                </li>
-                                <li>
-                                    <strong>IT Support</strong>
-                                    <span>Menyediakan dukungan dan asistensi teknis pemecahan masalah sistem, pemeliharaan perangkat lunak, serta pengelolaan operasional teknologi.</span>
-                                </li>
-                            </ol>
-                        </div>
+            <div class="container">
 
-                        <div class="kotak-pelengkap">
-                            <h3 class="judul-pelengkap">Pengalaman Organisasi Kampus</h3>
-                            <p class="keterangan-pelengkap">Kontribusi aktif dalam kegiatan kemahasiswaan di Institut Teknologi Del:</p>
-                            <ul class="daftar-organisasi">
-                                <li>
-                                    <strong>Divisi Pendidikan Himpunan Mahasiswa Sistem Informasi (HIMSI) IT Del</strong>
-                                    <p>Bertanggung jawab dalam merancang dan memfasilitasi program asistensi akademik, menyelenggarakan forum pembelajaran teknologi terkini, serta membina keterampilan teknis mahasiswa dalam kurikulum sistem informasi.</p>
-                                </li>
-                                <li>
-                                    <strong>Kolaborator Tim Proyek Terpadu Perangkat Lunak IT Del</strong>
-                                    <p>Berperan aktif memimpin analisis kebutuhan fungsional sistem dan penyusunan prototipe antarmuka pada berbagai penugasan proyek perkuliahan terintegrasi.</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </aside>
-                </article>
-            </section>
+                <div class="row align-items-center g-5">
 
-            <!-- ==================================================================
-                 SECTION 2: PORTOFOLIO KARYA (Showcase Dashboard & Tabel Semantik)
-                 ================================================================== -->
-            <section id="portofolio" aria-labelledby="judul-portofolio" class="section-blok">
-                <header class="header-section">
-                    <span class="nomor-section">02 PORTOFOLIO KARYA</span>
-                    <h2 id="judul-portofolio">Proyek yang Pernah Saya Kerjakan</h2>
-                    <p class="deskripsi-section">
-                        Beberapa proyek sistem informasi nyata yang menjadi bagian dari proses belajar, riset kebutuhan pengguna, dan pengembangan kemampuan saya.
-                    </p>
-                </header>
+                    <div class="col-lg-7">
 
-                <div class="grid-portofolio">
-
-                    <!-- Kartu Proyek 1: Sibayak Rent -->
-                    <article class="kartu-proyek">
-                        <figure class="kotak-foto-proyek">
-                            <img src="images/Sibayak Rent.png" 
-                                 alt="Dashboard platform website Sibayak Rent untuk sewa perlengkapan pendakian Gunung Sibayak" 
-                                 class="gambar-dashboard-proyek"
-                                 loading="lazy">
-                            <span class="lencana-kategori">Sistem Informasi &amp; Web</span>
-                        </figure>
-                        <div class="rincian-proyek">
-                            <header class="header-kartu-proyek">
-                                <h3>Sibayak Rent</h3>
-                                <span class="status-proyek status-selesai">Selesai Dikembangkan</span>
-                            </header>
-                            <p class="deskripsi-proyek">
-                                Platform sistem informasi penyewaan perlengkapan pendakian Gunung Sibayak (Berastagi, Sumatera Utara). Membantu pendaki melakukan pemesanan online 24 jam, pemantauan stok alat secara <em>real-time</em>, proses transaksi cepat, hingga otomatisasi kalkulasi denda keterlambatan.
-                            </p>
-                            <div class="fokus-peran">
-                                <strong>Peran &amp; Fokus:</strong>
-                                <span>Analisis Kebutuhan Sistem, Perancangan Alur Sewa, &amp; Implementasi Frontend Web</span>
-                            </div>
-                            <ul class="tag-teknologi" aria-label="Teknologi proyek Sibayak Rent">
-                                <li>Web Development</li>
-                                <li>Analisis Sistem</li>
-                                <li>UI/UX</li>
-                                <li>SQL Database</li>
-                                <li>GitHub</li>
-                            </ul>
-                        </div>
-                    </article>
-
-                    <!-- Kartu Proyek 2: Nusantara Connect -->
-                    <article class="kartu-proyek">
-                        <figure class="kotak-foto-proyek">
-                            <img src="images/Nusantara Connect.jpeg" 
-                                 alt="Antarmuka platform pariwisata Nusantara Connect - Gerbang profesional destinasi wisata Danau Toba dan Nusantara" 
-                                 class="gambar-dashboard-proyek"
-                                 loading="lazy">
-                            <span class="lencana-kategori">Bisnis Digital &amp; Web</span>
-                        </figure>
-                        <div class="rincian-proyek">
-                            <header class="header-kartu-proyek">
-                                <h3>Nusantara Connect</h3>
-                                <span class="status-proyek status-selesai">Selesai Dikembangkan</span>
-                            </header>
-                            <p class="deskripsi-proyek">
-                                Konsep layanan dan platform bisnis digital yang memfasilitasi wisatawan dalam menjelajahi ragam destinasi di Indonesia, khususnya kawasan Danau Toba. Mengintegrasikan pemesanan akomodasi penginapan, rental transportasi, rekomendasi kuliner lokal, hingga sistem keanggotaan eksklusif.
-                            </p>
-                            <div class="fokus-peran">
-                                <strong>Peran &amp; Fokus:</strong>
-                                <span>Riset Model Bisnis Digital, Arsitektur Layanan Wisata, &amp; Analisis Pengguna</span>
-                            </div>
-                            <ul class="tag-teknologi" aria-label="Teknologi proyek Nusantara Connect">
-                                <li>Business Analysis</li>
-                                <li>Bisnis Digital</li>
-                                <li>User Flow</li>
-                                <li>HTML5/CSS3</li>
-                                <li>GitHub</li>
-                            </ul>
-                        </div>
-                    </article>
-
-                    <!-- Kartu Proyek 3: Perisai Anak -->
-                    <article class="kartu-proyek">
-                        <figure class="kotak-foto-proyek kotak-foto-mobile">
-                            <img src="images/Perisai Anak.png" 
-                                 alt="Desain antarmuka mobile aplikasi Perisai Anak untuk pemantauan tumbuh kembang dan imunisasi balita" 
-                                 class="gambar-dashboard-proyek gambar-mobile"
-                                 loading="lazy">
-                            <span class="lencana-kategori">Perancangan UI/UX &amp; Mobile</span>
-                        </figure>
-                        <div class="rincian-proyek">
-                            <header class="header-kartu-proyek">
-                                <h3>Perisai Anak</h3>
-                                <span class="status-proyek status-selesai">Selesai (Desain &amp; Prototipe)</span>
-                            </header>
-                            <p class="deskripsi-proyek">
-                                Konsep antarmuka aplikasi mobile yang dirancang secara ergonomis untuk mempermudah orang tua memantau tumbuh kembang balita (berat badan, tinggi badan, lingkar kepala), jadwal berkala imunisasi terpadu, grafik progres bulanan, hingga informasi jadwal Posyandu terdekat.
-                            </p>
-                            <div class="fokus-peran">
-                                <strong>Peran &amp; Fokus:</strong>
-                                <span>UI/UX Designer, Perancangan Wireframe, Pembuatan Prototipe Interaktif, &amp; Usability Test</span>
-                            </div>
-                            <ul class="tag-teknologi" aria-label="Teknologi proyek Perisai Anak">
-                                <li>UI/UX Design</li>
-                                <li>Figma</li>
-                                <li>Wireframing</li>
-                                <li>Design System</li>
-                                <li>User Research</li>
-                            </ul>
-                        </div>
-                    </article>
-
-                    <!-- Kartu Proyek 4: Del Olympic -->
-                    <article class="kartu-proyek">
-                        <figure class="kotak-foto-proyek">
-                            <img src="images/del-olympic-preview.svg" 
-                                 alt="Preview dashboard portal informasi Del Olympic IT Del yang sedang dalam pengembangan aktif" 
-                                 class="gambar-dashboard-proyek"
-                                 loading="lazy">
-                            <span class="lencana-kategori">Sistem Informasi Kampus</span>
-                        </figure>
-                        <div class="rincian-proyek">
-                            <header class="header-kartu-proyek">
-                                <h3>Del Olympic</h3>
-                                <span class="status-proyek status-progres">Sedang Berjalan (In Progress)</span>
-                            </header>
-                            <p class="deskripsi-proyek">
-                                Sistem informasi manajemen kegiatan kompetisi dan olimpiade mahasiswa di lingkungan Institut Teknologi Del. Bertujuan memudahkan publikasi cabang lomba, pendaftaran delegasi mahasiswa secara daring, verifikasi berkas oleh panitia, serta dokumentasi papan skor prestasi terpadu.
-                            </p>
-                            <div class="fokus-peran">
-                                <strong>Peran &amp; Fokus:</strong>
-                                <span>Analisis Kebutuhan Fungsional, Pemodelan Skema Data Relasional, &amp; Wireframe Antarmuka</span>
-                            </div>
-                            <ul class="tag-teknologi" aria-label="Teknologi proyek Del Olympic">
-                                <li>Sistem Informasi</li>
-                                <li>SQL Database</li>
-                                <li>Analisis Kebutuhan</li>
-                                <li>Web Platform</li>
-                                <li>GitHub</li>
-                            </ul>
-                        </div>
-                    </article>
-
-                </div>
-
-                <!-- TABEL DATA SEMANTIK LENGKAP (Bobot 15%) -->
-                <div class="pembungkus-tabel-responsif" role="region" aria-label="Tabel Rekapitulasi Riwayat Proyek Perkuliahan" tabindex="0">
-                    <table class="tabel-portofolio">
-                        <caption>Rekapitulasi Riwayat Proyek Perkuliahan &amp; Capaian Pengembangan Sistem Informasi</caption>
-                        <thead>
-                            <tr>
-                                <th scope="col">No.</th>
-                                <th scope="col">Nama Proyek</th>
-                                <th scope="col">Kategori / Mata Kuliah Terkait</th>
-                                <th scope="col">Peran &amp; Fokus Pengerjaan</th>
-                                <th scope="col">Tools &amp; Teknologi</th>
-                                <th scope="col">Status Capaian</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td><strong>Sibayak Rent</strong></td>
-                                <td>Sistem Informasi &amp; Web Bisnis</td>
-                                <td>Analisis alur sewa outdoor, struktur basis data, &amp; frontend web responsif</td>
-                                <td>SQL, HTML5, CSS3, GitHub</td>
-                                <td><span class="status-tabel sukses">Selesai &amp; Dipresentasikan</span></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td><strong>Nusantara Connect</strong></td>
-                                <td>Bisnis Digital &amp; Layanan Pariwisata</td>
-                                <td>Riset model bisnis digital, pemetaan alur pengguna, &amp; arsitektur sistem</td>
-                                <td>Figma, Analisis Sistem, GitHub</td>
-                                <td><span class="status-tabel sukses">Selesai &amp; Tervalidasi</span></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td><strong>Perisai Anak</strong></td>
-                                <td>Perancangan Antarmuka &amp; Pengalaman Pengguna (UI/UX)</td>
-                                <td>Riset pengguna orang tua, wireframing, &amp; pembuatan prototipe interaktif</td>
-                                <td>Figma, Prototyping, Usability Test</td>
-                                <td><span class="status-tabel sukses">Selesai (Desain &amp; Prototipe)</span></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">4</th>
-                                <td><strong>Del Olympic</strong></td>
-                                <td>Pengembangan Sistem Informasi Terpadu</td>
-                                <td>Analisis kebutuhan fungsional sistem, perancangan ERD, &amp; alur registrasi lomba</td>
-                                <td>SQL Database, GitHub, HTML/CSS</td>
-                                <td><span class="status-tabel progres">Dalam Pengembangan (Ongoing)</span></td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="6">
-                                    <strong>Ringkasan:</strong> Total 4 Proyek Rekapitulasi (3 Proyek Telah Diselesaikan &amp; 1 Proyek Dalam Tahap Pengembangan Aktif Semester 5).
-                                </td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-
-            </section>
-
-            <!-- ==================================================================
-                 SECTION 3: GALERI KEAHLIAN TERSTRUKTUR & METODOLOGI KERJA
-                 ================================================================== -->
-            <section id="keahlian" aria-labelledby="judul-keahlian" class="section-blok">
-                <header class="header-section">
-                    <span class="nomor-section">03 KEAHLIAN &amp; KOMPETENSI</span>
-                    <h2 id="judul-keahlian">Keahlian Terstruktur &amp; Metodologi</h2>
-                    <p class="deskripsi-section">
-                        Kemampuan analitis dan teknis yang secara konsisten diasah melalui studi akademik perkuliahan dan pengerjaan proyek sistem informasi.
-                    </p>
-                </header>
-
-                <div class="grid-keahlian">
-                    <article class="kartu-keahlian">
-                        <div class="ikon-keahlian" aria-hidden="true">📊</div>
-                        <span class="urutan-keahlian-badge">01</span>
-                        <h3>Analisis Bisnis (Business Analysis)</h3>
-                        <p>
-                            Menganalisis permasalahan dan kebutuhan pengguna sebagai fondasi utama dalam merumuskan solusi sistem informasi yang fungsional, terstruktur, dan bernilai guna tinggi.
-                        </p>
-                    </article>
-
-                    <article class="kartu-keahlian">
-                        <div class="ikon-keahlian" aria-hidden="true">💻</div>
-                        <span class="urutan-keahlian-badge">02</span>
-                        <h3>Pengembangan Web (Web Development)</h3>
-                        <p>
-                            Membangun halaman web interaktif menggunakan standar HTML5 murni dan CSS modern responsif dengan memperhatikan hierarki semantik, kemudahan aksesibilitas (WCAG), dan performa.
-                        </p>
-                    </article>
-
-                    <article class="kartu-keahlian">
-                        <div class="ikon-keahlian" aria-hidden="true">🎨</div>
-                        <span class="urutan-keahlian-badge">03</span>
-                        <h3>Desain UI/UX &amp; Prototyping</h3>
-                        <p>
-                            Merancang tata letak dan pengalaman pengguna agar sebuah sistem dapat digunakan dengan mudah, intuitif, dan nyaman melalui wireframing serta prototipe interaktif di Figma.
-                        </p>
-                    </article>
-
-                    <article class="kartu-keahlian">
-                        <div class="ikon-keahlian" aria-hidden="true">🛠️</div>
-                        <span class="urutan-keahlian-badge">04</span>
-                        <h3>Dukungan Teknis &amp; IT Support</h3>
-                        <p>
-                            Memberikan asistensi teknis, pemeliharaan sistem informasi, pemecahan masalah perangkat lunak, serta pengelolaan operasional teknologi untuk menjamin kelancaran layanan.
-                        </p>
-                    </article>
-                </div>
-
-                <div class="grid-tools-metodologi">
-                    
-                    <div class="kotak-tools">
-                        <h3>Perangkat &amp; Alat Bantu Kerja (Tools)</h3>
-                        <p>Teknologi dan perangkat yang telah saya gunakan dalam pengerjaan proyek:</p>
-                        <ul class="daftar-tools">
-                            <li><strong>SQL (Structured Query Language):</strong> Digunakan dalam perancangan skema relasional, manipulasi data (CRUD), dan integrasi basis data proyek perkuliahan.</li>
-                            <li><strong>GitHub &amp; Git:</strong> Digunakan untuk version control, manajemen kode kolaboratif tim, dokumentasi repositori publik, dan hosting GitHub Pages.</li>
-                            <li><strong>HTML5 &amp; Modern CSS3:</strong> Penulisan struktur web semantik murni, Universal Box Sizing Reset, Flexbox, CSS Grid, aturan palet warna 60-30-10, dan Media Queries.</li>
-                            <li><strong>Figma:</strong> Digunakan dalam merancang antarmuka visual (UI), menyusun wireframe konseptual, dan menghasilkan prototipe interaktif aplikasi mobile &amp; web.</li>
-                        </ul>
-                    </div>
-
-                    <div class="kotak-metodologi">
-                        <h3>Proses Pengerjaan Proyek (Metodologi SDLC)</h3>
-                        <p>Tahapan sistematis yang saya terapkan dalam menyelesaikan setiap tugas solusi digital:</p>
-                        <ol class="daftar-alur-sdlc">
-                            <li><strong>Memahami Permasalahan:</strong> Mengidentifikasi kendala mendasar pada proses yang sedang berjalan serta menentukan batasan ruang lingkup solusi.</li>
-                            <li><strong>Mengidentifikasi Kebutuhan Pengguna:</strong> Menggali kebutuhan spesifik pengguna melalui riset pengguna, wawancara, dan pemetaan personas.</li>
-                            <li><strong>Menganalisis Kebutuhan Sistem:</strong> Menyusun spesifikasi fungsional dan non-fungsional serta memodelkan arsitektur basis data relasional.</li>
-                            <li><strong>Merancang Solusi &amp; Tampilan:</strong> Membuat wireframe terperinci, alur interaksi pengguna, dan prototipe desain antarmuka (UI/UX).</li>
-                            <li><strong>Mengembangkan &amp; Menguji Sistem:</strong> Mengimplementasikan kode semantik, melakukan pengujian fungsionalitas, serta mengevaluasi kemudahan penggunaan sistem.</li>
-                        </ol>
-                    </div>
-
-                </div>
-            </section>
-
-            <!-- ==================================================================
-                 SECTION 4: SERTIFIKASI PROFESIONAL
-                 ================================================================== -->
-            <section id="sertifikat" aria-labelledby="judul-sertifikat" class="section-blok">
-                <header class="header-section">
-                    <span class="nomor-section">04 SERTIFIKASI &amp; PELATIHAN</span>
-                    <h2 id="judul-sertifikat">Sertifikasi Resmi Terverifikasi</h2>
-                    <p class="deskripsi-section">
-                        Bukti kompetensi dan pembaruan keahlian dalam bidang kecerdasan buatan dan integrasi teknologi pengembangan aplikasi modern.
-                    </p>
-                </header>
-
-                <article class="kartu-sertifikasi">
-                    <div class="header-kartu-sertifikat">
-                        <span class="lencana-terverifikasi">
-                            <span class="ikon-centang" aria-hidden="true">&#10003;</span> Terverifikasi Resmi
+                        <span class="hero-badge">
+                            <i class="bi bi-stars me-2"></i>
+                            Mahasiswa Sistem Informasi
                         </span>
-                        <span class="simbol-ai" aria-hidden="true">&#129302;</span>
+
+                        <h1 class="hero-title mt-3">
+                            Jaya Bestina Simbolon
+                            <span>Portofolio Digital</span>
+                        </h1>
+
+                        <p class="hero-description">
+                            Saya adalah mahasiswa Sistem Informasi yang memiliki
+                            minat pada Business Analysis, Web Development,
+                            dan UI/UX. Saya tertarik menganalisis kebutuhan,
+                            merancang solusi sistem, serta membangun antarmuka
+                            digital yang fungsional dan mudah digunakan.
+                        </p>
+
+                        <div class="hero-buttons">
+
+                            <a
+                                href="#portofolio"
+                                class="btn btn-primary-custom">
+
+                                <i class="bi bi-folder2-open me-2"></i>
+                                Lihat Portofolio
+
+                            </a>
+
+                            <a
+                                href="#layanan"
+                                class="btn btn-outline-custom">
+
+                                <i class="bi bi-chat-dots me-2"></i>
+                                Hubungi Saya
+
+                            </a>
+
+                        </div>
+
                     </div>
 
-                    <div class="konten-sertifikat">
-                        <h3>AI Productivity and AI API Integration for Developers</h3>
-                        <p class="institusi-penerbit">
-                            Penyelenggara: <strong>Program Sertifikasi Keahlian Pengembang AI &amp; Teknologi Digital</strong>
-                        </p>
-                        <p class="deskripsi-sertifikat">
-                            Sertifikasi komprehensif yang memverifikasi penguasaan integrasi API Artificial Intelligence (Large Language Models, AI Agent Frameworks) pada alur kerja perangkat lunak modern serta optimalisasi produktivitas pengembang menggunakan teknologi kecerdasan buatan.
-                        </p>
 
-                        <h4 class="judul-kompetensi">Kompetensi Utama yang Divalidasi:</h4>
-                        <ul class="daftar-topik-sertifikat" aria-label="Daftar kompetensi sertifikasi AI">
-                            <li>AI API Integration &amp; Endpoint Management</li>
-                            <li>Developer Productivity Acceleration</li>
-                            <li>Prompt Engineering &amp; Context Optimization</li>
-                            <li>Modern Software Workflow Automation</li>
-                        </ul>
+                    <!-- FOTO PROFIL -->
+                    <div class="col-lg-5">
+
+                        <div class="profile-wrapper">
+
+                            <div class="profile-frame">
+
+                                <img
+                                    src="images/foto-profil.jpg"
+                                    class="profile-image"
+                                    alt="Foto profil Jaya Bestina Simbolon">
+
+                            </div>
+
+                        </div>
+
                     </div>
-                </article>
-            </section>
 
-            <!-- ==================================================================
-                 SECTION 5: FORMULIR PEMESANAN LAYANAN & KONTAK RESMI (Bobot 20%)
-                 ================================================================== -->
-            <section id="layanan" aria-labelledby="judul-layanan" class="section-blok">
-                <header class="header-section">
-                    <span class="nomor-section">05 LAYANAN &amp; KONTAK</span>
-                    <h2 id="judul-layanan">Formulir Pemesanan Layanan Konsultasi &amp; Kontak Resmi</h2>
-                    <p class="deskripsi-section">
-                        Silakan isi formulir berikut jika ingin berdiskusi mengenai proyek, sistem informasi, perancangan antarmuka UI/UX, atau kebutuhan konsultasi lainnya.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             TENTANG SAYA
+        ========================== -->
+        <section id="tentang" class="section-padding">
+
+            <div class="container">
+
+                <div class="section-heading text-center">
+
+                    <span class="section-label">
+                        TENTANG SAYA
+                    </span>
+
+                    <h2>
+                        Perkenalan
+                    </h2>
+
+                </div>
+
+
+                <div class="row justify-content-center">
+
+                    <div class="col-lg-9">
+
+                        <div class="about-box">
+
+                            <p>
+                                Saya adalah mahasiswa Sistem Informasi semester 5
+                                di Institut Teknologi Del yang memiliki minat pada
+                                Business Analysis, Web Development, dan UI/UX.
+                                Saya tertarik menganalisis kebutuhan, merancang
+                                solusi sistem, serta membangun antarmuka digital
+                                yang fungsional dan mudah digunakan. Melalui
+                                berbagai kegiatan dan proyek perkuliahan, saya
+                                terus mengembangkan kemampuan dalam analisis sistem,
+                                pengembangan web, perancangan antarmuka, dan
+                                pengelolaan informasi.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PORTOFOLIO
+        ========================== -->
+        <section id="portofolio"
+            class="section-padding portfolio-section">
+
+            <div class="container">
+
+                <div class="section-heading text-center">
+
+                    <span class="section-label">
+                        PORTOFOLIO KARYA
+                    </span>
+
+                    <h2>
+                        Proyek Saya
+                    </h2>
+
+                    <p>
+                        Beberapa proyek yang pernah dikerjakan dalam
+                        pengembangan sistem dan perancangan solusi digital.
                     </p>
-                </header>
 
-                <form class="formulir-interaktif" action="#" method="post">
-                    
-                    <!-- BLOK 1: DATA DIRI PEMOHON KONSULTASI -->
-                    <fieldset class="grup-formulir">
-                        <legend class="judul-legend">1. Identitas &amp; Data Diri Pemohon</legend>
-                        <p class="petunjuk-form">Seluruh kolom bertanda bintang (<span class="wajib" aria-hidden="true">*</span>) wajib diisi dengan data yang benar.</p>
+                </div>
 
-                        <div class="wadah-kontrol">
-                            <label for="input-nama" class="label-kontrol">
-                                Nama Lengkap <span class="wajib" aria-hidden="true">*</span>
-                            </label>
-                            <input type="text" 
-                                   id="input-nama" 
-                                   name="nama_pemohon" 
-                                   class="kontrol-input" 
-                                   placeholder="Masukkan nama lengkap Anda" 
-                                   autocomplete="name" 
-                                   required>
-                        </div>
 
-                        <div class="wadah-kontrol">
-                            <label for="input-email" class="label-kontrol">
-                                Alamat Email Resmi <span class="wajib" aria-hidden="true">*</span>
-                            </label>
-                            <input type="email" 
-                                   id="input-email" 
-                                   name="email_pemohon" 
-                                   class="kontrol-input" 
-                                   placeholder="nama@domain.com" 
-                                   autocomplete="email" 
-                                   required>
-                        </div>
+                <!-- Bootstrap Grid -->
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
 
-                        <div class="wadah-kontrol">
-                            <label for="input-telepon" class="label-kontrol">
-                                Nomor Telepon / WhatsApp <span class="wajib" aria-hidden="true">*</span>
-                            </label>
-                            <input type="tel" 
-                                   id="input-telepon" 
-                                   name="telepon_pemohon" 
-                                   class="kontrol-input" 
-                                   placeholder="08xxxxxxxxxx" 
-                                   pattern="[0-9]{10,15}" 
-                                   autocomplete="tel" 
-                                   required>
-                            <span class="teks-bantuan">Format: 10-15 digit angka (contoh: 081234567890).</span>
-                        </div>
 
-                        <div class="wadah-kontrol">
-                            <label for="input-durasi" class="label-kontrol">
-                                Estimasi Alokasi Waktu Pengerjaan (Minggu) <span class="wajib" aria-hidden="true">*</span>
-                            </label>
-                            <input type="number" 
-                                   id="input-durasi" 
-                                   name="durasi_minggu" 
-                                   class="kontrol-input" 
-                                   min="1" 
-                                   max="52" 
-                                   placeholder="Masukkan estimasi minggu (contoh: 4)" 
-                                   required>
-                            <span class="teks-bantuan">Perkiraan durasi proyek: 1 hingga 52 minggu.</span>
-                        </div>
-                    </fieldset>
+                    <!-- =====================
+                         DEL OLYMPIC
+                    ====================== -->
+                    <div class="col">
 
-                    <!-- BLOK 2: DETAIL SPESIFIKASI KEBUTUHAN LAYANAN & PROYEK -->
-                    <fieldset class="grup-formulir">
-                        <legend class="judul-legend">2. Detail Kebutuhan Konsultasi &amp; Solusi Digital</legend>
+                        <article class="card portfolio-card h-100">
 
-                        <div class="wadah-kontrol">
-                            <label for="pilihan-kategori-layanan" class="label-kontrol">
-                                Pilihan Kategori Layanan Konsultasi <span class="wajib" aria-hidden="true">*</span>
-                            </label>
-                            <select id="pilihan-kategori-layanan" name="kategori_layanan" class="kontrol-select" required>
-                                <option value="">Silakan Pilih Layanan Utama</option>
-                                <option value="analisis-bisnis">Analisis Kebutuhan Sistem &amp; Bisnis (Business Analysis)</option>
-                                <option value="web-development">Pembuatan &amp; Pengembangan Halaman Web Responsif Accessible</option>
-                                <option value="uiux-design">Perancangan Antarmuka UI/UX &amp; Pembuatan Prototipe Figma</option>
-                                <option value="it-support">Dukungan Operasional &amp; Konsultasi Teknis IT Support</option>
-                                <option value="konsultasi-terpadu">Konsultasi Solusi Sistem Informasi Menyeluruh (End-to-End)</option>
-                            </select>
-                        </div>
+                            <div class="card-image-wrapper">
 
-                        <div class="wadah-kontrol">
-                            <span class="label-subgrup" id="grup-prioritas">
-                                Tingkat Prioritas Layanan <span class="wajib" aria-hidden="true">*</span>
-                            </span>
-                            <div class="opsi-pilihan-grup" role="radiogroup" aria-labelledby="grup-prioritas">
-                                <div class="item-pilihan">
-                                    <input type="radio" 
-                                           id="prioritas-reguler" 
-                                           name="prioritas_pengerjaan" 
-                                           value="reguler" 
-                                           checked 
-                                           required>
-                                    <label for="prioritas-reguler">Reguler (Sesuai alur jadwal standar)</label>
-                                </div>
-                                <div class="item-pilihan">
-                                    <input type="radio" 
-                                           id="prioritas-kilat" 
-                                           name="prioritas_pengerjaan" 
-                                           value="kilat" 
-                                           required>
-                                    <label for="prioritas-kilat">Prioritas Cepat / Mendesak (Urgent)</label>
-                                </div>
+                                <img
+                                    src="images/del-olympic-preview.png"
+                                    class="card-img-top"
+                                    alt="Proyek DelOlympic">
+
                             </div>
-                        </div>
 
-                        <div class="wadah-kontrol">
-                            <span class="label-subgrup" id="grup-cakupan">
-                                Cakupan Topik Layanan yang Ingin Dibahas (Pilihan Fleksibel):
-                            </span>
-                            <div class="opsi-pilihan-grup" role="group" aria-labelledby="grup-cakupan">
-                                <div class="item-pilihan">
-                                    <input type="checkbox" 
-                                           id="cakupan-ba" 
-                                           name="cakupan_solusi[]" 
-                                           value="analisis-sistem" 
-                                           checked>
-                                    <label for="cakupan-ba">Analisis Kebutuhan Sistem Informasi</label>
-                                </div>
-                                <div class="item-pilihan">
-                                    <input type="checkbox" 
-                                           id="cakupan-uiux" 
-                                           name="cakupan_solusi[]" 
-                                           value="desain-uiux">
-                                    <label for="cakupan-uiux">Perancangan Antarmuka UI/UX di Figma</label>
-                                </div>
-                                <div class="item-pilihan">
-                                    <input type="checkbox" 
-                                           id="cakupan-frontend" 
-                                           name="cakupan_solusi[]" 
-                                           value="frontend-web">
-                                    <label for="cakupan-frontend">Pengembangan Halaman Web Semantik HTML5/CSS3</label>
-                                </div>
-                                <div class="item-pilihan">
-                                    <input type="checkbox" 
-                                           id="cakupan-database" 
-                                           name="cakupan_solusi[]" 
-                                           value="database-sql">
-                                    <label for="cakupan-database">Pemodelan Basis Data &amp; Query SQL</label>
-                                </div>
+
+                            <div class="card-body d-flex flex-column">
+
+                                <span class="technology-badge">
+                                    Sistem Informasi
+                                </span>
+
+                                <h3 class="card-title">
+                                    DelOlympic
+                                </h3>
+
+                                <p class="card-text">
+                                    Sistem informasi untuk membantu pengelolaan
+                                    informasi dan kegiatan olimpiade mahasiswa.
+                                </p>
+
+                                <button
+                                    type="button"
+                                    class="btn btn-card mt-auto"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#delOlympicModal">
+
+                                    Lihat Detail
+                                    <i class="bi bi-arrow-right ms-2"></i>
+
+                                </button>
+
                             </div>
-                        </div>
 
-                        <!-- Checkbox Persetujuan Layanan (Wajib / Required) -->
-                        <div class="wadah-kontrol">
-                            <div class="item-pilihan item-persetujuan">
-                                <input type="checkbox" 
-                                       id="persetujuan-layanan" 
-                                       name="persetujuan_layanan" 
-                                       required>
-                                <label for="persetujuan-layanan">
-                                    Saya menyetujui syarat konsultasi resmi dan menjamin data yang diisikan adalah benar. <span class="wajib" aria-hidden="true">*</span>
-                                </label>
-                            </div>
-                        </div>
+                        </article>
 
-                        <div class="wadah-kontrol">
-                            <label for="input-deskripsi" class="label-kontrol">
-                                Pesan atau Deskripsi Kebutuhan Anda <span class="wajib" aria-hidden="true">*</span>
-                            </label>
-                            <textarea id="input-deskripsi" 
-                                      name="deskripsi_proyek" 
-                                      class="kontrol-textarea" 
-                                      rows="6" 
-                                      placeholder="Tuliskan kebutuhan, gambaran proyek, target pengguna, atau pertanyaan Anda secara lengkap..." 
-                                      required></textarea>
-                        </div>
-
-                    </fieldset>
-
-                    <div class="aksi-formulir">
-                        <button type="submit" class="tombol tombol-kirim">
-                            <span class="ikon-kirim" aria-hidden="true">&#9993;</span> Kirim Permintaan Konsultasi
-                        </button>
-                        <p class="catatan-privasi">
-                            Data dan kebutuhan konsultasi Anda dijaga kerahasiaannya untuk keperluan komunikasi resmi proyek.
-                        </p>
                     </div>
 
-                </form>
 
-            </section>
+                    <!-- =====================
+                         NUSANTARA CONNECT
+                    ====================== -->
+                    <div class="col">
 
-        </div>
+                        <article class="card portfolio-card h-100">
+
+                            <div class="card-image-wrapper">
+
+                                <img
+                                    src="images/Nusantara Connect.png"
+                                    class="card-img-top"
+                                    alt="Proyek Nusantara Connect">
+
+                            </div>
+
+
+                            <div class="card-body d-flex flex-column">
+
+                                <span class="technology-badge">
+                                    Web Development
+                                </span>
+
+                                <h3 class="card-title">
+                                    Nusantara Connect
+                                </h3>
+
+                                <p class="card-text">
+                                    Konsep layanan digital yang membantu pengguna
+                                    menemukan informasi dan pilihan perjalanan.
+                                </p>
+
+                                <button
+                                    type="button"
+                                    class="btn btn-card mt-auto"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#nusantaraModal">
+
+                                    Lihat Detail
+                                    <i class="bi bi-arrow-right ms-2"></i>
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+                    <!-- =====================
+                         PERISAI ANAK
+                    ====================== -->
+                    <div class="col">
+
+                        <article class="card portfolio-card h-100">
+
+                            <div class="card-image-wrapper">
+
+                                <img
+                                    src="images/Perisai Anak.png"
+                                    class="card-img-top"
+                                    alt="Proyek Perisai Anak">
+
+                            </div>
+
+
+                            <div class="card-body d-flex flex-column">
+
+                                <span class="technology-badge">
+                                    UI/UX Design
+                                </span>
+
+                                <h3 class="card-title">
+                                    Perisai Anak
+                                </h3>
+
+                                <p class="card-text">
+                                    Perancangan antarmuka dan pengalaman pengguna
+                                    untuk mendukung solusi digital bagi pengguna.
+                                </p>
+
+                                <a
+                                    href="#layanan"
+                                    class="btn btn-card mt-auto">
+
+                                    Lihat Layanan
+                                    <i class="bi bi-arrow-right ms-2"></i>
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+                    <!-- =====================
+                         SIBAYAK RENT
+                    ====================== -->
+                    <div class="col">
+
+                        <article class="card portfolio-card h-100">
+
+                            <div class="card-image-wrapper">
+
+                                <img
+                                    src="images/Sibayak Rent.png"
+                                    class="card-img-top"
+                                    alt="Proyek Sibayak Rent">
+
+                            </div>
+
+
+                            <div class="card-body d-flex flex-column">
+
+                                <span class="technology-badge">
+                                    Analisis Sistem
+                                </span>
+
+                                <h3 class="card-title">
+                                    Sibayak Rent
+                                </h3>
+
+                                <p class="card-text">
+                                    Sistem informasi penyewaan perlengkapan
+                                    pendakian dengan pengelolaan pemesanan,
+                                    pembayaran, dan pengembalian.
+                                </p>
+
+                                <a
+                                    href="#layanan"
+                                    class="btn btn-card mt-auto">
+
+                                    Lihat Layanan
+                                    <i class="bi bi-arrow-right ms-2"></i>
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             KETERAMPILAN
+        ========================== -->
+        <section id="keterampilan" class="section-padding">
+
+            <div class="container">
+
+                <div class="section-heading text-center">
+
+                    <span class="section-label">
+                        KETERAMPILAN
+                    </span>
+
+                    <h2>
+                        Bidang yang Dipelajari
+                    </h2>
+
+                </div>
+
+
+                <div class="row g-4">
+
+
+                    <div class="col-6 col-md-3">
+
+                        <div class="skill-box">
+
+                            <i class="bi bi-bar-chart-line"></i>
+
+                            <h3>
+                                Business Analysis
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-6 col-md-3">
+
+                        <div class="skill-box">
+
+                            <i class="bi bi-code-slash"></i>
+
+                            <h3>
+                                Web Development
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-6 col-md-3">
+
+                        <div class="skill-box">
+
+                            <i class="bi bi-palette"></i>
+
+                            <h3>
+                                UI/UX Design
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-6 col-md-3">
+
+                        <div class="skill-box">
+
+                            <i class="bi bi-database"></i>
+
+                            <h3>
+                                Database
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             LAYANAN
+        ========================== -->
+        <section id="layanan"
+            class="section-padding service-section">
+
+            <div class="container">
+
+                <div class="section-heading text-center">
+
+                    <span class="section-label">
+                        FORMULIR LAYANAN
+                    </span>
+
+                    <h2>
+                        Hubungi Saya
+                    </h2>
+
+                    <p>
+                        Silakan isi formulir untuk menyampaikan kebutuhan
+                        atau pertanyaan.
+                    </p>
+
+                </div>
+
+
+                <div class="row justify-content-center">
+
+                    <div class="col-lg-8">
+
+                        <form
+                            id="serviceForm"
+                            class="service-form"
+                            novalidate>
+
+
+                            <!-- NAMA -->
+                            <div class="form-floating mb-3">
+
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="nama"
+                                    placeholder="Nama Lengkap"
+                                    required>
+
+                                <label for="nama">
+                                    <i class="bi bi-person me-2"></i>
+                                    Nama Lengkap
+                                </label>
+
+                                <div class="valid-feedback">
+                                    Nama sudah diisi.
+                                </div>
+
+                                <div class="invalid-feedback">
+                                    Silakan masukkan nama lengkap.
+                                </div>
+
+                            </div>
+
+
+                            <!-- EMAIL -->
+                            <div class="input-group has-validation mb-3">
+
+                                <span class="input-group-text">
+                                    <i class="bi bi-envelope"></i>
+                                </span>
+
+                                <div class="form-floating flex-grow-1">
+
+                                    <input
+                                        type="email"
+                                        class="form-control"
+                                        id="email"
+                                        placeholder="Email"
+                                        required>
+
+                                    <label for="email">
+                                        Alamat Email
+                                    </label>
+
+                                </div>
+
+                                <div class="invalid-feedback">
+                                    Silakan masukkan email yang valid.
+                                </div>
+
+                            </div>
+
+
+                            <!-- KATEGORI -->
+                            <div class="form-floating mb-3">
+
+                                <select
+                                    class="form-select"
+                                    id="kategori"
+                                    required>
+
+                                    <option value="" selected disabled>
+                                        Pilih kategori
+                                    </option>
+
+                                    <option value="business-analysis">
+                                        Business Analysis
+                                    </option>
+
+                                    <option value="web-development">
+                                        Web Development
+                                    </option>
+
+                                    <option value="uiux">
+                                        UI/UX Design
+                                    </option>
+
+                                    <option value="database">
+                                        Database
+                                    </option>
+
+                                    <option value="lainnya">
+                                        Lainnya
+                                    </option>
+
+                                </select>
+
+                                <label for="kategori">
+                                    Kategori Layanan
+                                </label>
+
+                                <div class="invalid-feedback">
+                                    Silakan pilih kategori layanan.
+                                </div>
+
+                            </div>
+
+
+                            <!-- PESAN -->
+                            <div class="form-floating mb-3">
+
+                                <textarea
+                                    class="form-control message-input"
+                                    id="pesan"
+                                    placeholder="Pesan"
+                                    required></textarea>
+
+                                <label for="pesan">
+                                    <i class="bi bi-chat-left-text me-2"></i>
+                                    Pesan
+                                </label>
+
+                                <div class="invalid-feedback">
+                                    Silakan tuliskan pesan Anda.
+                                </div>
+
+                            </div>
+
+
+                            <!-- CHECKBOX -->
+                            <div class="form-check mb-4">
+
+                                <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="persetujuan"
+                                    required>
+
+                                <label
+                                    class="form-check-label"
+                                    for="persetujuan">
+
+                                    Saya menyetujui penggunaan data untuk
+                                    keperluan komunikasi.
+
+                                </label>
+
+                                <div class="invalid-feedback">
+                                    Anda harus menyetujui sebelum mengirim.
+                                </div>
+
+                            </div>
+
+
+                            <!-- BUTTON -->
+                            <button
+                                type="submit"
+                                class="btn btn-primary-custom w-100">
+
+                                <i class="bi bi-send me-2"></i>
+                                Kirim Permintaan
+
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
     </main>
 
-    <!-- ==========================================================================
-         FOOTER (Identitas, Hak Cipta, Kontak Langsung, dan Aksesibilitas)
-         ========================================================================== -->
-    <footer class="footer-utama">
-        <div class="kontainer-lebar footer-konten">
-            
-            <div class="footer-profil">
-                <p class="footer-nama">Jaya Bestina Simbolon</p>
-                <p class="footer-status">Mahasiswa Sarjana Sistem Informasi (Semester 5) &bull; Institut Teknologi Del</p>
-                <p class="footer-lokasi">Laguboti, Toba, Sumatera Utara, Indonesia</p>
-            </div>
 
-            <div class="footer-kontak">
-                <p class="footer-judul-kolom">Kontak Resmi &amp; Repositori:</p>
-                <p>
-                    Email: <a href="mailto:jayabestinasimbolon.27@gmail.com" class="footer-tautan">jayabestinasimbolon.27@gmail.com</a>
-                </p>
-                <p>
-                    GitHub: <a href="https://github.com/JayaBestinaSimbolon/ppw-2026-week2-12S24023" target="_blank" rel="noopener noreferrer" class="footer-tautan">ppw-2026-week2-12S24023</a>
-                </p>
-            </div>
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer class="footer">
 
-            <div class="footer-aksesibilitas">
-                <p class="footer-judul-kolom">Kepatuhan Standar Web:</p>
-                <p class="teks-wcag">
-                    Dibangun memenuhi pedoman <strong>WCAG 2.2 Level AA</strong> dengan kontras warna terencana, navigasi keyboard penuh, dan struktur semantik HTML5 murni.
-                </p>
-                <p class="hak-cipta">&copy; 2026 Jaya Bestina Simbolon. Seluruh hak cipta dilindungi undang-undang.</p>
+        <div class="container">
+
+            <div class="row align-items-center g-3">
+
+                <div class="col-md-6">
+
+                    <p class="mb-0">
+                        © 2026 Portofolio Jaya Bestina Simbolon
+                    </p>
+
+                </div>
+
+                <div class="col-md-6 text-md-end">
+
+                    <a
+                        href="mailto:jayabestinasimbolon.27@gmail.com"
+                        class="footer-link">
+
+                        <i class="bi bi-envelope me-2"></i>
+                        Email
+
+                    </a>
+
+                </div>
+
             </div>
 
         </div>
+
     </footer>
 
+
+    <!-- =========================
+         MODAL DEL OLYMPIC
+    ========================== -->
+    <div
+        class="modal fade"
+        id="delOlympicModal"
+        tabindex="-1"
+        aria-labelledby="delOlympicModalLabel"
+        aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h2
+                        class="modal-title"
+                        id="delOlympicModalLabel">
+
+                        DelOlympic
+
+                    </h2>
+
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Tutup">
+                    </button>
+
+                </div>
+
+                <div class="modal-body">
+
+                    <p>
+                        DelOlympic merupakan konsep sistem informasi yang
+                        dirancang untuk membantu pengelolaan informasi dan
+                        kegiatan olimpiade mahasiswa.
+                    </p>
+
+                    <div class="modal-info">
+
+                        <strong>Fokus Proyek</strong>
+
+                        <span>
+                            Sistem Informasi dan pengelolaan kegiatan.
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+
+                        Tutup
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         MODAL NUSANTARA CONNECT
+    ========================== -->
+    <div
+        class="modal fade"
+        id="nusantaraModal"
+        tabindex="-1"
+        aria-labelledby="nusantaraModalLabel"
+        aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h2
+                        class="modal-title"
+                        id="nusantaraModalLabel">
+
+                        Nusantara Connect
+
+                    </h2>
+
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Tutup">
+                    </button>
+
+                </div>
+
+                <div class="modal-body">
+
+                    <p>
+                        Nusantara Connect merupakan konsep layanan digital
+                        yang berfokus pada penyediaan informasi dan pilihan
+                        perjalanan untuk membantu pengguna merencanakan
+                        perjalanan.
+                    </p>
+
+                    <div class="modal-info">
+
+                        <strong>Fokus Proyek</strong>
+
+                        <span>
+                            Web Development dan layanan digital.
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+
+                        Tutup
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Bootstrap JS -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+
+    <!-- Form Validation -->
+    <script>
+
+        const form =
+            document.getElementById("serviceForm");
+
+        form.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            if (!form.checkValidity()) {
+
+                event.stopPropagation();
+
+                form.classList.add("was-validated");
+
+                return;
+
+            }
+
+            form.classList.add("was-validated");
+
+            alert(
+                "Formulir berhasil divalidasi dan siap dikirim."
+            );
+
+            form.reset();
+
+            form.classList.remove("was-validated");
+
+        });
+
+    </script>
+
 </body>
+
 </html>
