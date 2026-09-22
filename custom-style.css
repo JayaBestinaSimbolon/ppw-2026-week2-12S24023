@@ -607,13 +607,16 @@ body {
 .card-image-wrapper {
 
     height:
-        210px;
+        220px;
 
     overflow:
         hidden;
 
     background-color:
         #e2e8f0;
+
+    border-bottom:
+        1px solid var(--border-color);
 }
 
 
@@ -630,6 +633,9 @@ body {
 
     object-fit:
         cover;
+
+    object-position:
+        center;
 
     transition:
         transform 0.4s ease;
