@@ -169,6 +169,31 @@ class App {
     if (footerEmail && this.state.profile.email) {
       footerEmail.href = `mailto:${this.state.profile.email}`;
     }
+
+    // Render About Content
+    const aboutContainer = document.getElementById('about-content');
+    if (aboutContainer) {
+      let aboutHtml = `<p>${this.escapeHTML(this.state.profile.description)}</p>`;
+      
+      if (this.state.profile.experience && this.state.profile.experience.length > 0) {
+        aboutHtml += `<h4 class="mt-4 mb-3 fw-bold">Pengalaman Organisasi</h4>`;
+        aboutHtml += `<div class="experience-list">`;
+        this.state.profile.experience.forEach(exp => {
+          aboutHtml += `
+            <div class="card border-0 shadow-sm mb-3">
+              <div class="card-body">
+                <h5 class="card-title text-primary fw-bold mb-1">${this.escapeHTML(exp.role)}</h5>
+                <h6 class="card-subtitle text-muted mb-3"><i class="bi bi-building me-2"></i>${this.escapeHTML(exp.organization)}</h6>
+                <p class="card-text text-secondary mb-0">${this.escapeHTML(exp.description)}</p>
+              </div>
+            </div>
+          `;
+        });
+        aboutHtml += `</div>`;
+      }
+      
+      aboutContainer.innerHTML = aboutHtml;
+    }
   }
 
   openProjectModal(projectId) {

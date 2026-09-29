@@ -6,5 +6,12 @@
   "image": "images/foto-profil.jpg",
   "email": "jayabestinasimbolon.27@gmail.com",
   "whatsapp": "+6281396305139",
-  "linkedin": "https://www.linkedin.com/in/jaya-bestina-simbolon"
+  "linkedin": "https://www.linkedin.com/in/jaya-bestina-simbolon",
+  "experience": [
+    {
+      "organization": "Himpunan Mahasiswa Sistem Informasi",
+      "role": "Anggota Divisi Pendidikan",
+      "description": "Aktif berpartisipasi dalam program dan kegiatan pendidikan di dalam himpunan untuk mendukung pengembangan akademik mahasiswa Sistem Informasi."
+    }
+  ]
 }
