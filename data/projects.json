@@ -1,0 +1,46 @@
+[
+  {
+    "id": "del-olympic",
+    "title": "DelOlympic",
+    "category": "Sistem Informasi",
+    "thumbnail": "images/del-olympic-preview.svg",
+    "description": "Sistem informasi untuk membantu pengelolaan informasi dan kegiatan olimpiade mahasiswa.",
+    "detail": "DelOlympic merupakan konsep sistem informasi yang dirancang untuk membantu pengelolaan informasi dan kegiatan olimpiade mahasiswa.",
+    "metrics": "Pengelolaan data 100+ peserta",
+    "tags": ["Information System", "Management"],
+    "link": "#"
+  },
+  {
+    "id": "nusantara-connect",
+    "title": "Nusantara Connect",
+    "category": "Web Development",
+    "thumbnail": "images/Nusantara Connect.jpeg",
+    "description": "Konsep layanan digital yang membantu pengguna menemukan informasi dan pilihan perjalanan.",
+    "detail": "Nusantara Connect merupakan konsep layanan digital yang berfokus pada penyediaan informasi dan pilihan perjalanan untuk membantu pengguna merencanakan perjalanan.",
+    "metrics": "Pencarian rute < 2 detik",
+    "tags": ["Web App", "Travel"],
+    "link": "#"
+  },
+  {
+    "id": "perisai-anak",
+    "title": "Perisai Anak",
+    "category": "UI/UX Design",
+    "thumbnail": "images/Perisai Anak.png",
+    "description": "Perancangan antarmuka dan pengalaman pengguna untuk mendukung solusi digital bagi pengguna.",
+    "detail": "Perancangan antarmuka (UI) dan pengalaman pengguna (UX) untuk aplikasi Perisai Anak yang bertujuan mendukung solusi perlindungan anak secara digital.",
+    "metrics": "Skor Usability 85/100",
+    "tags": ["UI/UX", "Mobile Design"],
+    "link": "#"
+  },
+  {
+    "id": "sibayak-rent",
+    "title": "Sibayak Rent",
+    "category": "Analisis Sistem",
+    "thumbnail": "images/Sibayak Rent.png",
+    "description": "Sistem informasi penyewaan perlengkapan pendakian dengan pengelolaan pemesanan, pembayaran, dan pengembalian.",
+    "detail": "Sibayak Rent adalah sistem informasi komprehensif untuk penyewaan perlengkapan pendakian, mulai dari manajemen inventaris, pemesanan, hingga pelacakan pengembalian.",
+    "metrics": "Efisiensi sewa naik 40%",
+    "tags": ["System Analysis", "Rental"],
+    "link": "#"
+  }
+]

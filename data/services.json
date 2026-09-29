@@ -1,0 +1,27 @@
+[
+  {
+    "id": "business-analysis",
+    "name": "Business Analysis",
+    "description": "Analisis kebutuhan sistem, pemodelan proses bisnis, dan perancangan solusi."
+  },
+  {
+    "id": "web-development",
+    "name": "Web Development",
+    "description": "Pengembangan aplikasi web responsif dan interaktif."
+  },
+  {
+    "id": "uiux",
+    "name": "UI/UX Design",
+    "description": "Perancangan antarmuka dan pengalaman pengguna yang intuitif."
+  },
+  {
+    "id": "database",
+    "name": "Database",
+    "description": "Perancangan dan pengelolaan basis data relasional/NoSQL."
+  },
+  {
+    "id": "lainnya",
+    "name": "Lainnya",
+    "description": "Layanan kustom lainnya sesuai kebutuhan."
+  }
+]

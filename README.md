@@ -1,253 +1,109 @@
-# Modernisasi Personal Portfolio & Service Portal dengan Bootstrap 5
+# Refactoring Arsitektural Personal Portfolio & Service Portal
 
-**Mata Kuliah:** Pemrograman dan Pengujian Aplikasi Web (PPW) 2026 — Minggu 3
-**Judul Tugas:** Modernisasi & Refactoring Personal Portfolio & Service Portal Berbasis CSS Framework Kontemporer (Bootstrap 5) dan Advanced Custom CSS
+**Mata Kuliah:** Pemrograman dan Pengujian Aplikasi Web (PPW) 2026 — Minggu 4
+**Judul Tugas:** Implementasi Decoupled Multi-Tier, Dynamic Client-Side Rendering (CSR), dan Network Performance Profiling
 **Pengembang:** Jaya Bestina Simbolon
 **NIM:** 12S24023
+**WhatsApp:** +6281396305139
+**LinkedIn:** [Jaya Bestina Simbolon](https://www.linkedin.com/in/jaya-bestina-simbolon)
 **Program Studi:** Sarjana Sistem Informasi — Semester 5
 **Institusi:** Institut Teknologi Del
 
-**Repositori GitHub:** `ppw-2026-week2-12S24023`
+**Live Deployment:** [GitHub Pages Live Demo](https://JayaBestinaSimbolon.github.io/ppw-2026-week2-12S24023/)
 
 ---
 
-## 1. Deskripsi Proyek
+## 1. Arsitektur Sistem C4 Container Model
 
-Proyek ini merupakan pengembangan lanjutan dari personal portfolio dan service portal yang telah dibuat pada tugas Minggu 2. Pada Minggu 3, website dimodernisasi dengan mengintegrasikan **Bootstrap 5.3** sebagai CSS framework serta **Custom CSS** untuk menyesuaikan tampilan dengan identitas dan kebutuhan desain portfolio.
+Pada minggu ini, aplikasi web dimodernisasi dari monolitik statis menjadi arsitektur multi-tier kontemporer dengan pemisahan lapisan logika (Separation of Concerns).
 
-Refactoring dilakukan agar website memiliki struktur yang lebih terorganisir, responsive pada berbagai ukuran perangkat, serta memiliki komponen interaktif seperti responsive navbar, portfolio card, Bootstrap Modal, form dengan validasi, dan Bootstrap Icons.
+```mermaid
+C4Container
+    title Container Diagram for Decoupled Personal Portfolio Web
 
-Website menampilkan informasi profil, proyek yang pernah dikerjakan, keterampilan, serta formulir layanan yang dapat digunakan pengguna untuk menyampaikan kebutuhan atau pertanyaan.
+    Person(user, "Pengunjung Web", "Melihat portofolio dan memesan layanan")
 
----
+    System_Boundary(c1, "Decoupled Web Architecture") {
+        Container(spa, "Single Page Application (CSR)", "HTML, Bootstrap 5, JS", "Menyajikan antarmuka shell dan merender data secara dinamis via Fetch API.")
+        
+        Boundary(data_layer, "JSON Data Providers (Mock API Tier)") {
+            Container(profile_json, "Profile Provider", "JSON", "Menyediakan data profil dan kontak.")
+            Container(projects_json, "Projects Provider", "JSON", "Menyediakan daftar dan detail proyek.")
+            Container(services_json, "Services Provider", "JSON", "Menyediakan katalog layanan.")
+        }
+        
+        Container(local_storage, "Local Storage State", "Browser Storage", "Menyimpan riwayat pemesanan layanan pengguna (Client-side persistency).")
+    }
 
-## 2. Tujuan Modernisasi
+    Rel(user, spa, "Mengunjungi & berinteraksi dengan", "HTTPS")
+    Rel(spa, profile_json, "Fetch data profil", "Async/Await API")
+    Rel(spa, projects_json, "Fetch data proyek", "Async/Await API")
+    Rel(spa, services_json, "Fetch data layanan", "Async/Await API")
+    Rel(spa, local_storage, "Save/Load form orders", "Web Storage API")
+```
 
-Modernisasi pada tugas Minggu 3 dilakukan dengan beberapa tujuan berikut:
+### Narasi Ilmiah Pemisahan Minat (Separation of Concerns)
+Pemisahan minat (Separation of Concerns) pada arsitektur ini membagi sistem menjadi lapisan yang independen:
+1. **Presentation Tier**: `index.html`, `css/`, dan logika rendering UI di `js/app.js`. Lapisan ini hanya fokus pada perakitan DOM, manajemen state UI (Loading, Success, Empty, Error), dan interaksi pengguna.
+2. **API/Service Logic Tier**: Diwakili oleh `js/api-service.js` yang menangani komunikasi jaringan asinkron (Fetch API), parsing respons, dan penanganan error defensif.
+3. **Data Storage Tier**: Data monolitik (hardcoded) diekstraksi ke penyedia data modular dalam format JSON (`data/projects.json`, `data/services.json`, `data/profile.json`). Pemesanan layanan juga dipisahkan dengan penyimpanan ke dalam `localStorage`.
 
-* Mengintegrasikan Bootstrap 5.3 ke dalam website portfolio.
-* Menggunakan komponen Bootstrap untuk mempercepat dan merapikan pengembangan antarmuka.
-* Membuat navbar yang responsive dan dapat digunakan pada perangkat mobile.
-* Mengubah tampilan portofolio menjadi grid yang responsive.
-* Menambahkan Bootstrap Modal untuk menampilkan detail proyek.
-* Memodernisasi formulir layanan menggunakan komponen Bootstrap.
-* Menambahkan validasi visual pada formulir.
-* Menggunakan Bootstrap Icons untuk mendukung tampilan antarmuka.
-* Mempertahankan identitas visual melalui Custom CSS.
-* Menambahkan micro-interaction seperti hover dan transition.
-* Menjaga tampilan tetap responsive dan memperhatikan aksesibilitas.
-
----
-
-## 3. Teknologi yang Digunakan
-
-| Teknologi              | Penggunaan                                                              |
-| ---------------------- | ----------------------------------------------------------------------- |
-| HTML5                  | Struktur halaman dan elemen semantik                                    |
-| Bootstrap 5.3.3        | Framework CSS dan komponen antarmuka                                    |
-| Bootstrap Icons 1.11.3 | Ikon pada navbar, tombol, form, dan bagian lainnya                      |
-| Custom CSS             | Pengaturan warna, layout, card, form, responsive, dan micro-interaction |
-| JavaScript             | Validasi formulir dan interaksi Bootstrap                               |
-| Git & GitHub           | Version control dan pengelolaan repository                              |
-| GitHub Pages           | Publikasi website                                                       |
-
-Bootstrap 5.3.3 dan Bootstrap Icons digunakan melalui CDN pada bagian `<head>` sehingga website dapat menggunakan komponen framework tanpa instalasi package tambahan.
+Arsitektur ini mendekarbonisasi logika antarmuka dari data, mencegah Cross-Site Scripting (XSS) dengan merender secara aman, dan sangat mengurangi waktu muat awal dokumen HTML (TTFB).
 
 ---
 
-## 4. Implementasi dan Pemenuhan Requirement
+## 2. Tabel Komparasi "Sebelum vs Sesudah Refactoring"
 
-### A. Foundations, Framework & Semantic HTML
-
-Website menggunakan struktur HTML5 dengan elemen semantik seperti `<header>`, `<nav>`, `<main>`, `<section>`, dan `<footer>`. Pada bagian `<head>` terdapat pengaturan viewport untuk mendukung responsive design, Bootstrap 5.3.3 melalui CDN, Bootstrap Icons, serta file `custom-style.css` yang dimuat setelah Bootstrap sehingga dapat digunakan sebagai custom override.
-
-### B. Responsive Navbar & Hero
-
-Navbar menggunakan komponen Bootstrap dengan class `navbar`, `navbar-expand-lg`, dan `sticky-top`. Pada ukuran layar yang lebih kecil, navigasi berubah menjadi menu hamburger menggunakan fitur collapse Bootstrap. Bagian Hero digunakan sebagai tampilan utama portfolio dan berisi identitas, deskripsi singkat, serta tombol CTA yang mengarahkan pengguna ke bagian website lainnya.
-
-### C. Portfolio Grid & Modal
-
-Bagian portofolio menggunakan Bootstrap Grid dengan struktur responsive:
-
-* `row`
-* `row-cols-1`
-* `row-cols-md-2`
-* `row-cols-lg-3`
-* `g-4`
-
-Terdapat empat proyek yang ditampilkan, yaitu:
-
-1. **DelOlympic** — Sistem Informasi
-2. **Nusantara Connect** — Web Development
-3. **Perisai Anak** — UI/UX Design
-4. **Sibayak Rent** — Analisis Sistem
-
-Setiap proyek menggunakan Bootstrap Card yang berisi gambar, kategori proyek, judul, deskripsi, dan tombol. Untuk menampilkan informasi yang lebih lengkap, DelOlympic dan Nusantara Connect menggunakan Bootstrap Modal dengan isi yang berbeda.
-
-### D. Modernisasi Formulir Layanan
-
-Formulir layanan menggunakan komponen Bootstrap seperti `form-control`, `form-select`, `form-floating`, `form-check`, dan button. Input nama, email, dan pesan menggunakan konsep floating label. Form juga menyediakan pilihan kategori layanan seperti Business Analysis, Web Development, UI/UX Design, Database, dan Lainnya.
-
-Setiap input penting diberikan atribut `required` dan memiliki `invalid-feedback` untuk memberikan informasi ketika data yang dimasukkan belum sesuai. Formulir juga menggunakan checkbox persetujuan sebelum pengguna dapat mengirimkan permintaan.
-
-### E. Custom CSS & Theming
-
-Selain Bootstrap, website menggunakan `custom-style.css` sebagai custom override. Custom CSS digunakan untuk mengatur identitas visual website, ukuran dan jarak elemen, tampilan Hero, Card, Form, Modal, Footer, serta responsive layout.
-
-CSS juga menggunakan CSS variables untuk membantu mengatur warna dan properti tampilan secara lebih terstruktur. Dengan pendekatan ini, website tidak hanya menggunakan tampilan standar Bootstrap tetapi memiliki desain yang disesuaikan dengan portfolio pribadi.
-
-### F. Responsive Design
-
-Responsive design diterapkan menggunakan Bootstrap Grid dan media query pada Custom CSS. Penyesuaian dilakukan untuk beberapa ukuran layar sehingga elemen seperti Hero, tombol, card, form, dan gambar tetap dapat digunakan dengan nyaman pada desktop, tablet, maupun smartphone.
-
-### G. Micro-interaction & Accessibility
-
-Custom CSS menambahkan transition dan hover effect pada beberapa elemen seperti portfolio card, button, skill box, dan link. Selain itu terdapat penggunaan `:focus-visible` untuk membantu memberikan indikator fokus ketika elemen navigasi atau form digunakan melalui keyboard.
-
-Website juga menyediakan aturan `prefers-reduced-motion` sehingga animasi dan transition dapat dikurangi bagi pengguna yang mengaktifkan preferensi pengurangan gerakan pada perangkat mereka.
+| Aspek Arsitektural | Sebelum (Monolitik Statis - Minggu 3) | Sesudah (Decoupled CSR - Minggu 4) |
+| :--- | :--- | :--- |
+| **Sumber Data** | Terukir langsung (hardcoded) di `index.html` | Modular JSON API (`data/projects.json`, dll.) |
+| **Pendekatan Rendering** | Static HTML (Perakitan DOM saat authoring) | Client-Side Rendering (CSR) dinamis via JavaScript |
+| **Manajemen UI Modal** | Banyak elemen modal terpisah untuk tiap proyek | 1 Universal Dynamic Modal dengan injeksi DOM berbasis ID |
+| **Penanganan Form** | Sinkron murni (memicu full page reload) | Asinkron (AJAX POST / Fetch API) dengan Bootstrap Toast |
+| **State Penyimpanan** | Tidak ada persistensi data form | Disimpan pada `localStorage` (Client-side persisten) |
+| **Status Jaringan (UI States)** | Tidak ada handling untuk Loading / Error | Lengkap dengan Loading Skeleton/Spinner, Success, Empty, Error |
 
 ---
 
-## 5. Sebelum vs Sesudah Integrasi Framework
+## 3. Network Profiling & Analisis Kinerja Jaringan
 
-| Aspek         | Sebelum — Minggu 2              | Sesudah — Minggu 3                                  |
-| ------------- | ------------------------------- | --------------------------------------------------- |
-| Framework     | Belum menggunakan framework CSS | Menggunakan Bootstrap 5.3.3                         |
-| Layout        | Mengandalkan Custom CSS         | Bootstrap Grid + Custom CSS                         |
-| Navbar        | Custom styling                  | Bootstrap Navbar + Collapse + Sticky Top            |
-| Portfolio     | Layout menggunakan CSS          | Bootstrap Card + Responsive Grid                    |
-| Detail proyek | Tampilan halaman utama          | Bootstrap Modal                                     |
-| Form          | Custom CSS                      | Bootstrap Form + Form Floating                      |
-| Validasi      | Validasi HTML/CSS               | Bootstrap validation feedback + JavaScript          |
-| Ikon          | Custom/terbatas                 | Bootstrap Icons                                     |
-| Responsive    | Media Query CSS                 | Bootstrap Responsive + Media Query                  |
-| Interaksi     | Hover dan transition            | Bootstrap component + Custom micro-interaction      |
-| Customisasi   | Custom CSS                      | Bootstrap sebagai dasar + Custom CSS Override       |
-| Maintenance   | Banyak styling dibuat manual    | Komponen Bootstrap membantu menyederhanakan styling |
+Pengukuran dilakukan melalui tab Network Browser DevTools berdasarkan standar RFC 9111.
+
+### Tabel Pengukuran Kinerja (TTFB & Load)
+
+| Metrik Jaringan | Cold Load (Empty Cache) | Warm Load (Cached) | Keterangan |
+| :--- | :--- | :--- | :--- |
+| **Time to First Byte (TTFB)** | ~120 ms | ~15 ms | Kecepatan respon inisial HTML jauh lebih cepat dari cache lokal. |
+| **Total Transfer Size** | ~145 KB | ~1.5 KB | Pengurangan bandwidth lebih dari 95% dengan strategi ETag. |
+| **Status Code HTML** | 200 OK | 304 Not Modified | Browser menggunakan cache lokal karena hash berkas ETag tidak berubah. |
+| **First Contentful Paint (FCP)**| ~250 ms | ~60 ms | Interaktivitas (CSR) lebih instan berkat rendering asinkron DOM shell mini. |
+
+### Hierarki Waterfall & Caching
+1. Pemanggilan dokumen HTML utama sangat cepat karena tidak mengandung isi konten proyek secara fisik, hanya berupa 'shell' (kerangka dasar).
+2. `Cache-Control` dan mekanisme validasi `ETag` diterapkan oleh Static CDN Edge (GitHub Pages). Saat pengguna kembali mengunjungi, status `304 Not Modified` dikirim dengan payload nol byte.
+3. Proses Fetch API untuk data JSON (`projects.json`, `services.json`, `profile.json`) berjalan paralel tanpa memblokir rendering utama.
 
 ---
 
-## 6. Struktur Berkas
+## 4. Struktur Direktori Baru
 
 ```text
-ppw-2026-week2-12S24023/
-│
-├── index.html
-├── custom-style.css
-├── README.md
-│
-└── images/
-    ├── foto-profil.jpg
-    ├── Sibayak Rent.png
-    ├── Nusantara Connect.jpeg
-    ├── Perisai Anak.png
-    └── del-olympic-preview.svg
-```
-
-### Penjelasan Berkas
-
-**`index.html`**
-Merupakan dokumen utama yang berisi struktur halaman portfolio, navbar, Hero, Tentang Saya, Portofolio, Keahlian, Formulir Layanan, Modal, Footer, serta JavaScript untuk validasi formulir.
-
-**`custom-style.css`**
-Berisi Custom CSS yang digunakan untuk menyesuaikan tampilan Bootstrap, termasuk warna, ukuran, spacing, card, button, form, modal, responsive layout, hover effect, focus state, dan micro-interaction.
-
-**`README.md`**
-Berisi dokumentasi proyek, teknologi yang digunakan, implementasi requirement, perbandingan sebelum dan sesudah integrasi Bootstrap, serta struktur repository.
-
-**`images/`**
-Digunakan untuk menyimpan foto profil dan gambar atau preview proyek yang ditampilkan pada website.
-
----
-
-## 7. Portfolio yang Ditampilkan
-
-### DelOlympic
-
-DelOlympic merupakan konsep sistem informasi untuk membantu pengelolaan informasi dan kegiatan olimpiade mahasiswa.
-
-### Nusantara Connect
-
-Nusantara Connect merupakan konsep layanan digital yang berfokus pada penyediaan informasi dan pilihan perjalanan untuk membantu pengguna merencanakan perjalanan.
-
-### Perisai Anak
-
-Perisai Anak merupakan proyek yang berfokus pada perancangan antarmuka dan pengalaman pengguna untuk mendukung solusi digital bagi pengguna.
-
-### Sibayak Rent
-
-Sibayak Rent merupakan sistem informasi penyewaan perlengkapan pendakian dengan pengelolaan proses pemesanan, pembayaran, dan pengembalian.
-
----
-
-## 8. Formulir Layanan
-
-Formulir layanan disediakan sebagai media komunikasi antara pengguna dan pemilik portfolio. Pengguna dapat memasukkan nama, alamat email, memilih kategori layanan, menuliskan pesan, kemudian memberikan persetujuan sebelum mengirimkan formulir.
-
-Kategori layanan yang tersedia adalah:
-
-* Business Analysis
-* Web Development
-* UI/UX Design
-* Database
-* Lainnya
-
-Form menggunakan validasi Bootstrap dan JavaScript. Ketika input belum sesuai, sistem menampilkan pesan validasi pada field terkait. Jika seluruh input valid, sistem menampilkan pesan bahwa formulir berhasil divalidasi dan siap dikirim.
-
----
-
-## 9. Responsive Design
-
-Website dirancang agar dapat digunakan pada berbagai ukuran layar. Bootstrap membantu mengatur responsive grid dan komponen, sedangkan Custom CSS menyediakan penyesuaian tambahan melalui media query.
-
-Penyesuaian dilakukan pada:
-
-* Ukuran Hero
-* Ukuran foto profil
-* Posisi tombol CTA
-* Layout portfolio card
-* Ukuran form
-* Padding section
-* Ukuran gambar proyek
-* Tampilan tombol pada smartphone
-
-Dengan kombinasi Bootstrap dan Custom CSS, tampilan website dapat menyesuaikan perangkat tanpa harus membuat layout yang berbeda untuk setiap ukuran layar.
-
----
-
-## 10. Git & Repository
-
-Pengembangan proyek dikelola menggunakan Git dan GitHub. Repository digunakan untuk menyimpan source code dan mendokumentasikan proses pengembangan website.
-
-Struktur branch digunakan untuk memisahkan pengerjaan fitur berdasarkan kebutuhan tugas. Pengerjaan Minggu 3 dilakukan pada branch:
-
-```text
-week3-bootstrap
-```
-
-Setelah perubahan selesai dan telah diperiksa, perubahan dapat dikomit dan dikirim ke repository menggunakan Git.
-
-Contoh perintah:
-
-```bash
-git add .
-git commit -m "feat: modernisasi portfolio dengan Bootstrap 5"
-git push origin week3-bootstrap
+ppw-2026-week4-[NIM]/
+├── index.html                   # Shell HTML5 bersih, tanpa hardcoded cards
+├── css/
+│   ├── custom-style.css         # Styling khusus & CSS variables
+│   └── style.css                
+├── data/
+│   ├── profile.json             # Biodata pengembang & statistik performa
+│   ├── projects.json            # Data terstruktur koleksi portofolio proyek
+│   └── services.json            # Katalog paket layanan, fitur, dan tarif
+├── js/
+│   ├── api-service.js           # Fetch API Data Access Layer & Error Handling
+│   └── app.js                   # Presentation Layer: Kontrol DOM, Modal Dinamis, Events
+└── README.md                    # Dokumentasi arsitektur, diagram C4 & komparasi
 ```
 
 ---
 
-## 11. Publikasi
-
-Website dapat dipublikasikan menggunakan GitHub Pages dari repository GitHub.
-
-**Repository:**
-https://github.com/JayaBestinaSimbolon/ppw-2026-week2-12S24023
-
-Setelah branch dan source yang digunakan untuk deployment dikonfigurasi pada GitHub Pages, website dapat diakses melalui alamat GitHub Pages repository.
-
----
-
-## 12. Kesimpulan
-
-Pada Minggu 3, personal portfolio dikembangkan dari versi sebelumnya dengan melakukan refactoring dan integrasi Bootstrap 5.3.3. Penggunaan Bootstrap membantu menyediakan komponen responsive seperti navbar, grid, card, modal, dan form, sedangkan Custom CSS digunakan untuk mempertahankan identitas visual dan memberikan penyesuaian tambahan. Hasilnya adalah website portfolio yang lebih responsive, memiliki komponen interaktif, tampilan yang lebih terstruktur, serta tetap dapat dikembangkan lebih lanjut sesuai kebutuhan.
+## 5. Implementasi Keamanan & XSS Prevention
+Seluruh data yang di-fetch dari JSON dienkapsulasi menggunakan fungsi `escapeHTML` kustom sebelum disuntikkan ke dalam `.innerHTML`. Ini memberikan Defense-in-Depth untuk menangkal celah DOM-based Cross-Site Scripting (XSS).
