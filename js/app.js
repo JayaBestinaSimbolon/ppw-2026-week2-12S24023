@@ -1,4 +1,3 @@
-import ApiService from './api-service.js';
 
 class App {
   constructor() {
@@ -70,8 +69,17 @@ class App {
         <div class="col-12">
           <div class="alert alert-danger d-flex align-items-center" role="alert">
             <i class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2"></i>
-            <div>Gagal memuat data: ${this.escapeHTML(message)}</div>
+            <div>Gagal memuat data portofolio: ${this.escapeHTML(message)}. Pastikan Anda membukanya melalui Live Server (localhost), bukan file://.</div>
           </div>
+        </div>
+      `;
+    }
+    
+    const aboutContainer = document.getElementById('about-content');
+    if (aboutContainer) {
+      aboutContainer.innerHTML = `
+        <div class="alert alert-danger text-center">
+          Gagal memuat informasi profil: ${this.escapeHTML(message)}.
         </div>
       `;
     }
@@ -170,6 +178,24 @@ class App {
       footerEmail.href = `mailto:${this.state.profile.email}`;
     }
 
+    // Render Contact Info in Hubungi Saya
+    const contactInfoContainer = document.getElementById('contact-info-container');
+    if (contactInfoContainer && this.state.profile.email && this.state.profile.whatsapp) {
+      let waNumber = this.state.profile.whatsapp.replace(/\D/g, '');
+      if (waNumber.startsWith('0')) waNumber = '62' + waNumber.substring(1);
+      
+      contactInfoContainer.innerHTML = `
+        <div class="contact-item">
+            <i class="bi bi-envelope text-primary me-2"></i>
+            <a href="mailto:${this.escapeHTML(this.state.profile.email)}" class="text-decoration-none text-dark fw-medium">${this.escapeHTML(this.state.profile.email)}</a>
+        </div>
+        <div class="contact-item">
+            <i class="bi bi-whatsapp text-primary me-2"></i>
+            <a href="https://wa.me/${waNumber}" class="text-decoration-none text-dark fw-medium" target="_blank">${this.escapeHTML(this.state.profile.whatsapp)}</a>
+        </div>
+      `;
+    }
+
     // Render About Content
     const aboutContainer = document.getElementById('about-content');
     if (aboutContainer) {
@@ -189,6 +215,80 @@ class App {
             </div>
           `;
         });
+        aboutHtml += `</div>`;
+      }
+
+      if (this.state.profile.education) {
+        aboutHtml += `<h4 class="mt-4 mb-3 fw-bold">Pendidikan</h4>`;
+        aboutHtml += `
+          <div class="card border-0 shadow-sm mb-3">
+            <div class="card-body">
+              <h5 class="card-title text-primary fw-bold mb-1"><i class="bi bi-mortarboard me-2"></i>${this.escapeHTML(this.state.profile.education.campus)}</h5>
+              <h6 class="card-subtitle text-muted mb-0">${this.escapeHTML(this.state.profile.education.status)}</h6>
+            </div>
+          </div>
+        `;
+      }
+
+      if (this.state.profile.skills) {
+        aboutHtml += `<hr class="my-5">
+          <div class="text-center mb-4">
+            <span class="section-label">KEAHLIAN & TOOLS</span>
+            <h3 class="fw-bold">Keterampilan Saya</h3>
+          </div>
+          <div class="row g-4 justify-content-center">`;
+        
+        // Soft Skills
+        if (this.state.profile.skills.soft && this.state.profile.skills.soft.length > 0) {
+          aboutHtml += `
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100 p-3">
+                <div class="card-body">
+                  <h5 class="card-title text-primary fw-bold mb-4 text-center">Soft Skills</h5>
+                  <div class="d-flex flex-wrap justify-content-center gap-2">
+                    ${this.state.profile.skills.soft.map(skill => `<span class="badge bg-secondary fs-6 px-3 py-2">${this.escapeHTML(skill)}</span>`).join('')}
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+        }
+
+        // Hard Skills
+        if (this.state.profile.skills.hard && this.state.profile.skills.hard.length > 0) {
+          aboutHtml += `
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100 p-3">
+                <div class="card-body">
+                  <h5 class="card-title text-primary fw-bold mb-4 text-center">Hard Skills</h5>
+                  <div class="d-flex flex-wrap justify-content-center gap-2">
+                    ${this.state.profile.skills.hard.map(skill => `<span class="badge bg-primary fs-6 px-3 py-2">${this.escapeHTML(skill)}</span>`).join('')}
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+        }
+
+        // Tools
+        if (this.state.profile.skills.tools && this.state.profile.skills.tools.length > 0) {
+          aboutHtml += `
+            <div class="col-12 mt-5">
+              <h5 class="text-primary fw-bold mb-4 text-center">Tools & Software</h5>
+              <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-3 justify-content-center">
+                ${this.state.profile.skills.tools.map(tool => `
+                  <div class="col">
+                    <div class="card border-0 shadow-sm h-100 text-center p-3 hover-zoom">
+                      <img src="${this.escapeHTML(tool.image)}" alt="${this.escapeHTML(tool.name)}" class="mx-auto mb-3" style="width: 50px; height: 50px; object-fit: contain; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));">
+                      <h6 class="card-title fw-bold mb-0">${this.escapeHTML(tool.name)}</h6>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          `;
+        }
+
         aboutHtml += `</div>`;
       }
       

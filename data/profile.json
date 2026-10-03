@@ -2,16 +2,32 @@
   "name": "Jaya Bestina Simbolon",
   "role": "Mahasiswa Sistem Informasi",
   "university": "Institut Teknologi Del",
-  "description": "Saya adalah mahasiswa Sistem Informasi semester 5 di Institut Teknologi Del yang memiliki minat pada Business Analysis, Web Development, dan UI/UX. Saya tertarik memahami kebutuhan pengguna, menganalisis permasalahan, merancang solusi sistem, serta mengembangkan antarmuka digital yang fungsional, sederhana, dan mudah digunakan.",
+  "description": "Saya adalah mahasiswa Sistem Informasi semester 5 di Institut Teknologi Del yang memiliki minat pada Business Analysis, Web Development, dan UI/UX. Saya tertarik memahami kebutuhan pengguna, menganalisis permasalahan, merancang solusi sistem, serta mengembangkan antarmuka digital yang fungsional, sederhana, dan mudah digunakan. Melalui berbagai proyek dan kegiatan perkuliahan, saya terus mengembangkan kemampuan dalam analisis sistem, pengembangan web, perancangan antarmuka, pengelolaan informasi, hingga pengujian aplikasi. Saya juga senang mempelajari hal baru, bekerja dalam tim, berdiskusi untuk menemukan solusi, dan menerima masukan untuk terus meningkatkan kemampuan. Ke depannya, saya ingin mendapatkan pengalaman yang lebih luas melalui proyek maupun lingkungan profesional agar dapat menerapkan kemampuan yang saya miliki dalam menyelesaikan permasalahan nyata sekaligus terus berkembang di bidang teknologi informasi.",
   "image": "images/foto-profil.jpg",
-  "email": "jayabestinasimbolon.27@gmail.com",
-  "whatsapp": "+6281396305139",
+  "email": "jayabestinasimbolllon.27@gmail.com",
+  "whatsapp": "081396305139",
   "linkedin": "https://www.linkedin.com/in/jaya-bestina-simbolon",
   "experience": [
     {
-      "organization": "Himpunan Mahasiswa Sistem Informasi",
+      "organization": "Himpunan Sistem Informasi",
       "role": "Anggota Divisi Pendidikan",
       "description": "Aktif berpartisipasi dalam program dan kegiatan pendidikan di dalam himpunan untuk mendukung pengembangan akademik mahasiswa Sistem Informasi."
     }
-  ]
+  ],
+  "education": {
+    "campus": "Institut Teknologi Del",
+    "status": "Mahasiswa Aktif Semester 5"
+  },
+  "skills": {
+    "soft": ["Kerja Tim", "Komunikasi", "Problem Solving", "Berpikir Analitis", "Kreatif"],
+    "hard": ["Business Analysis", "Web Development", "UI/UX Design", "Database Management"],
+    "tools": [
+      { "name": "VS Code", "image": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/visualstudiocode.svg" },
+      { "name": "Microsoft Word", "image": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/microsoftword.svg" },
+      { "name": "Figma", "image": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/figma.svg" },
+      { "name": "MySQL", "image": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/mysql.svg" },
+      { "name": "Git", "image": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/git.svg" },
+      { "name": "Bootstrap", "image": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/bootstrap.svg" }
+    ]
+  }
 }

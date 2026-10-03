@@ -1288,3 +1288,5 @@ textarea:focus-visible {
     }
 
 }
+.hover-zoom { transition: transform 0.3s ease; }
+.hover-zoom:hover { transform: scale(1.05); }
